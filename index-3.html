@@ -852,14 +852,19 @@
                             <img src="img/team/4.jpg" alt="Image">
                         </div>
                         <div class="team-info">
-                            <h4><a href="team-details.html">Rosalina D. William</a></h4>
-                            <h6 class="ltn__secondary-color">Real Estate Broker</h6>
-                            <div class="ltn__social-media">
-                                <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                </ul>
+                          
+                            <h4>🚗 Ample Parking</h4>
+                            <ul>
+                                <li>Spacious and secure parking</li>
+                                <li> Hassle-free parking for residents</li>
+                                <li> Guest parking available</li>
+                            </ul>
+                            <div class="btn-wrapper text-center">
+                                <a href="#" class="btn btn-transparent btn-effect-3 btn-border">LOAD MORE +</a>
+                            </div>
+                             <div class="ltn__social-media">
+                            
+                                
                             </div>
                         </div>
                     </div>
@@ -870,14 +875,18 @@
                             <img src="img/team/2.jpg" alt="Image">
                         </div>
                         <div class="team-info">
-                            <h4><a href="team-details.html">Kelian Anderson</a></h4>
-                            <h6 class="ltn__secondary-color">Selling Agents</h6>
+                            
+                            <h4>🚗 Ample Parking</h4>
+                            <ul>
+                                <li>Spacious and secure parking</li>
+                                <li> Hassle-free parking for residents</li>
+                                <li> Guest parking available</li>
+                            </ul>
+                            <div class="btn-wrapper text-center">
+                                <a href="#" class="btn btn-transparent btn-effect-3 btn-border">LOAD MORE +</a>
+                            </div>
                             <div class="ltn__social-media">
-                                <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                </ul>
+                                
                             </div>
                         </div>
                     </div>
@@ -888,14 +897,18 @@
                             <img src="img/team/3.jpg" alt="Image">
                         </div>
                         <div class="team-info">
-                            <h4><a href="team-details.html">Miranda H. Halim</a></h4>
-                            <h6 class="ltn__secondary-color">Property Seller</h6>
+                            
+                            <h4>🚗 Ample Parking</h4>
+                            <ul>
+                                <li>Spacious and secure parking</li>
+                                <li> Hassle-free parking for residents</li>
+                                <li> Guest parking available</li>
+                            </ul>
+                            <div class="btn-wrapper text-center">
+                                <a href="#" class="btn btn-transparent btn-effect-3 btn-border">LOAD MORE +</a>
+                            </div>
                             <div class="ltn__social-media">
-                                <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                </ul>
+                               
                             </div>
                         </div>
                     </div>
@@ -1068,19 +1081,7 @@
                                         <input type="email" name="email" placeholder="Enter email address">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="input-item">
-                                        <select class="nice-select">
-                                            <option>Select Service Type</option>
-                                            <option>Property Management </option>
-                                            <option>Mortgage Service </option>
-                                            <option>Consulting Service</option>
-                                            <option>Home Buying</option>
-                                            <option>Home Selling</option>
-                                            <option>Escrow Services</option>
-                                        </select>
-                                    </div>
-                                </div>
+                               
                                 <div class="col-md-6">
                                     <div class="input-item input-item-phone ltn__custom-icon">
                                         <input type="text" name="phone" placeholder="Enter phone number">
@@ -1129,6 +1130,42 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            var formData = new FormData(this);
+            var object = {};
+            formData.forEach((value, key) => object[key] = value);
+            var json = JSON.stringify(object);
+    
+            fetch("https://script.google.com/macros/s/AKfycbxZFyfcHnPPIgPaut9NfWYtIUrK4NpAJdGhyg1mhSMI73tBtNStbzvAvLR72JV7VAyi/exec", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: json
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === "success") {
+                    alert("Form submitted successfully!");
+                    document.getElementById("contact-form").reset();
+                } else {
+                    alert("Error submitting form.");
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+
+        fetch("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL", {
+    method: "POST",
+    mode: "no-cors", // Disable CORS restrictions
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(object)
+})
+
+    </script>
+    
     <!-- CALL TO ACTION END -->
 
     <!-- FOOTER AREA START -->
