@@ -8315,7 +8315,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .ltn__gallery-item {
   margin-bottom: 30px; }
   .ltn__gallery-item:hover .ltn__gallery-item-img::before {
-    opacity: 0.9;
+    /* opacity: 0.9; */
     visibility: visible; }
   .ltn__gallery-item:hover .ltn__gallery-item-img img {
     -webkit-transform: scale(1.1);
@@ -14534,7 +14534,9 @@ input.cart-plus-minus-box {
 .btn-effect-1:hover {
   color: var(--ltn__heading-color); }
   .btn-effect-1:hover::after {
-    width: 100%; }
+    width: 100%; 
+    border-radius: 5px;
+  }
 
 .btn-effect-2:after {
   width: 0%;
