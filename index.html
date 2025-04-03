@@ -91,7 +91,9 @@
                                         <li><a href="#floorplansection">Floor Plan</a></li>
                                         <li><a href="#amsection">Amenities</a></li>
                                         <li><a href="#locationsection">Location</a></li>
+
                                         <li class="special-link">
+
                                             <a href="#" id="enquireBtn" style="padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Enquire Now</a>
                                         </li>
                                         
@@ -186,8 +188,14 @@
                     <li><a href="#floorplansection">Floor Plan</a></li>
                     <li><a href="#amsection">Amenities</a></li>
                     <li><a href="#locationsection">Location</a></li>
-                    <li><a href="#locationsection">Enquire Now</a></li>
+
+                    <!-- <div class="btn-wrapper animated">
+                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Enquire Now</a>
+                    </div> -->
+
+
                 </ul>
+
             </div>
             
             <div class="ltn__social-media-2">
@@ -223,10 +231,78 @@
                                         <div class="slide-brief animated">
                                             <p>All homes at Moonstone have an utilitarian plan that implements the latest contemporary design.</p>
                                         </div>
+
+
                                         <div class="btn-wrapper animated">
-                                            <a href="#locationsection" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
+                                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Make An Enquiry</a>
                                         </div>
+                                        
+                                        <!-- Popup Form -->
+                                        <div id="popupForm" class="popup-overlay">
+                                            <div class="popup-content">
+                                                <span class="close-btn" onclick="closePopup()">&times;</span>
+                                                <h2>Enquiry Form</h2>
+                                                <form>
+                                                    <label for="name">Name:</label>
+                                                    <input type="text" id="name" name="name" required>
+                                                    
+                                                    <label for="contact">Contact No:</label>
+                                                    <input type="tel" id="contact" name="contact" required>
+                                                    
+                                                    <button type="submit" class="theme-btn-1 btn btn-effect-1">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- CSS -->
+                                        <style>
+                                        .popup-overlay {
+                                            display: none;
+                                            position: fixed;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: rgba(0, 0, 0, 0.5);
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+                                        
+                                        .popup-content {
+                                            background: #fff;
+                                            padding: 20px;
+                                            border-radius: 5px;
+                                            text-align: center;
+                                            width: 300px;
+                                            position: relative;
+                                        }
+                                        
+                                        .close-btn {
+                                            position: absolute;
+                                            top: 10px;
+                                            right: 15px;
+                                            font-size: 20px;
+                                            cursor: pointer;
+                                        }
+                                        </style>
+                                        
+                                        <!-- JavaScript -->
+                                        <script>
+                                        function openPopup() {
+                                            document.getElementById("popupForm").style.display = "flex";
+                                        }
+                                        
+                                        function closePopup() {
+                                            document.getElementById("popupForm").style.display = "none";
+                                        }
+                                        </script>
+                                        
+                                        
+
+
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -247,9 +323,11 @@
                                         <div class="slide-brief animated">
                                             <p>Rajhans group is one of the most preferred real estate developers in Vasai. We at Rajhans group are driven by passion to create magic in the lives of scores of customers.</p>
                                         </div>
+                                        
                                         <div class="btn-wrapper animated">
-                                            <a href="#locationsection" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
+                                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Make An Enquiry</a>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -270,9 +348,11 @@
                                         <div class="slide-brief animated">
                                             <p>Moonstone offers you stimulating and immersive amenities that enables you to embark on a journey of higher quality living.</p>
                                         </div>
+
                                         <div class="btn-wrapper animated">
-                                            <a href="#locationsection" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
+                                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Make An Enquiry</a>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -333,9 +413,12 @@
                             <p>"Where luxury meets comfort, and life meets its perfect home.
                                 Discover the elegance of living at Yours For Life." </p>
                         </div>
+
                         <div class="btn-wrapper animated">
-                            <a href="#locationsection" class="theme-btn-1 btn btn-effect-1">Enquire Now</a>
+                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Enquire now</a>
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -429,9 +512,12 @@
                         </div>
                         
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
-                    </div>
+
+
+                    <div class="btn-wrapper animated">
+                                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
+                                        </div>
+
                 </div>
                 
 
@@ -446,9 +532,11 @@
                         </div>
                         
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
+
+                    <div class="btn-wrapper animated">
+                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
                     </div>
+
                 </div>
                 <!-- gallery-item -->
                 <div class="ltn__gallery-item filter_category_1 col-lg-4 col-sm-6 col-12">
@@ -461,9 +549,11 @@
                         </div>
                         
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
+
+                    <div class="btn-wrapper animated">
+                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
                     </div>
+
                 </div>
                 <!-- gallery-item -->
                 <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
@@ -476,9 +566,11 @@
                         </div>
                        
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
+
+                    <div class="btn-wrapper animated">
+                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
                     </div>
+
                 </div>
                
                 <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
@@ -491,9 +583,13 @@
                         </div>
                         
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
+
+
+                    <div class="btn-wrapper animated">
+                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
                     </div>
+
+
                 </div>
                
                
@@ -509,9 +605,11 @@
                         </div>
                        
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#" class="btn btn-transparent btn-effect-3 btn-border">View</a>
+                    
+                    <div class="btn-wrapper animated">
+                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
                     </div>
+
                 </div>
                
                                
@@ -569,9 +667,11 @@
                                 <li>Ample Parking</li>
                                 <li>Power Back-up for Lift and Common Areas</li>
                             </ul>
-                            <div class="btn-wrapper text-center">
-                                <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">Know More</a>
+
+                            <div class="btn-wrapper animated">
+                                <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Know More</a>
                             </div>
+
                              <div class="ltn__social-media">
                             
                                 
@@ -592,9 +692,12 @@
                                 <li>CCTV Night Vision Camera</li>
                                 <li>Fire Safety</li>
                             </ul>
-                            <div class="btn-wrapper text-center">
-                                <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">Know More</a>
+                            
+                            <div class="btn-wrapper animated">
+                                <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Know More</a>
                             </div>
+
+
                             <div class="ltn__social-media">
                                 
                             </div>
@@ -614,9 +717,12 @@
                                 <li>Vitrified Tiles</li>
                                 <li>Branded Sanitary Fittings</li>
                             </ul>
-                            <div class="btn-wrapper text-center">
-                                <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">Know More</a>
+                            
+                            <div class="btn-wrapper animated">
+                                <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Know More</a>
                             </div>
+
+
                             <div class="ltn__social-media">
                                
                             </div>
@@ -730,9 +836,12 @@ document.getElementById("contact-form").reset();
                             <h1>Looking for a dream home?</h1>
                             <p>We can help you realize your dream of a new home</p>
                         </div>
-                        <div class="btn-wrapper">
-                            <a class="btn btn-effect-3 btn-white" href="#locationsection">Enquire Properties <i class="icon-next"></i></a>
+
+                        <div class="btn-wrapper animated">
+                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Enquire Properties</a>
                         </div>
+
+
                     </div>
                 </div>
             </div>
