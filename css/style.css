@@ -7222,6 +7222,10 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
 
+  .ltn__utilize-menu li {
+    margin-bottom: 30px; /* Adds space below each item */
+}
+
 .product-action li:hover a {
   background-color: var(--ltn__secondary-color);
   color: var(--white);

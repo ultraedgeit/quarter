@@ -27,9 +27,7 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
-    <!-- Add your site or content here -->
-
- 
+    <!-- Add your site or application content here -->
 
 <!-- Body main wrapper start -->
 <div class="body-wrapper">    
@@ -77,7 +75,15 @@
                             <div class="site-logo">
                                 <a href="index.html"><img src="img/logo1.png" alt="Logo"></a>
                             </div>
-                            
+                            <div class="get-support clearfix d-none">
+                                <div class="get-support-icon">
+                                    <i class="icon-call"></i>
+                                </div>
+                                <div class="get-support-info">
+                                    <h6>Get Support</h6>
+                                    <h4><a href="tel:+123456789">123-456-789-10</a></h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col header-menu-column menu-color-white">
@@ -86,12 +92,66 @@
                                 <div class="ltn__main-menu">
                                     <ul>
                                         <li><a href="#">Home</a></li>
-                                        <li><a href="#aboutussection">About</a></li>
-                                        <li><a href="#gallerysection">Gallery</a></li>
-                                        <li><a href="#floorplansection">Floor Plan</a></li>
-                                        <li><a href="#amsection">Amenities</a></li>
-                                        <li><a href="#locationsection">Location</a></li>
-                                        <li class="special-link"><a href="#locationsection  ">Enquire Now</a></li>
+                                        <li><a href="#about-us">About</a></li>
+                                        <li><a href="#gallery">Gallery</a></li>
+                                        <li><a href="#floorplan">Floor Plan</a></li>
+                                        <li><a href="#amenities">Amenities</a></li>
+                                        <li><a href="#location">Location</a></li>
+
+                        
+                                        <li class="special-link">
+                                            <a href="#" id="enquireBtn" style="padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Enquire Now</a>
+                                        </li>
+                                        
+                                        <!-- Overlay -->
+                                        <div class="overlay" id="overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 999;"></div>
+                                        
+                                        <!-- Popup Form -->
+                                        <div class="popup-form" id="popupForm" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; width: 350px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); text-align: center; z-index: 1000;">
+                                            <button class="close-btn" id="closeBtn" style="background: none; border: none; font-size: 18px; cursor: pointer; position: absolute; top: 10px; right: 15px;">✖</button>
+                                            <form>
+                                                <div style="margin-bottom: 15px; text-align: left;">
+                                                    <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px;">Name</label>
+                                                    <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                                                </div>
+                                        
+                                                <div style="margin-bottom: 15px; text-align: left;">
+                                                    <label for="contact" style="display: block; font-weight: bold; margin-bottom: 5px;">Contact No</label>
+                                                    <input type="text" id="contact" name="contact" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                                                </div>
+                                        
+                                                <button type="submit" style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">Submit</button>
+                                            </form>
+                                        </div>
+                                        
+                                        <script>
+                                            // Get elements
+                                            const enquireBtn = document.getElementById('enquireBtn');
+                                            const popupForm = document.getElementById('popupForm');
+                                            const closeBtn = document.getElementById('closeBtn');
+                                            const overlay = document.getElementById('overlay');
+                                        
+                                            // Show the popup when button is clicked
+                                            enquireBtn.addEventListener('click', function(event) {
+                                                event.preventDefault();
+                                                popupForm.style.display = 'block';
+                                                overlay.style.display = 'block';
+                                            });
+                                        
+                                            // Close the popup
+                                            closeBtn.addEventListener('click', function() {
+                                                popupForm.style.display = 'none';
+                                                overlay.style.display = 'none';
+                                            });
+                                        
+                                            // Close the popup if overlay is clicked
+                                            overlay.addEventListener('click', function() {
+                                                popupForm.style.display = 'none';
+                                                overlay.style.display = 'none';
+                                            });
+                                        </script>
+                                        
+                                        
                                     </ul>
                                 </div>
                             </nav>
@@ -116,33 +176,105 @@
     </header>
     <!-- HEADER AREA END -->
 
+    <!-- Utilize Cart Menu Start -->
+    <div id="ltn__utilize-cart-menu" class="ltn__utilize ltn__utilize-cart-menu">
+        <div class="ltn__utilize-menu-inner ltn__scrollbar">
+            <div class="ltn__utilize-menu-head">
+                <span class="ltn__utilize-menu-title">Cart</span>
+                <button class="ltn__utilize-close">×</button>
+            </div>
+            <div class="mini-cart-product-area ltn__scrollbar">
+                <div class="mini-cart-item clearfix">
+                    <div class="mini-cart-img">
+                        <a href="#"><img src="img/product/1.png" alt="Image"></a>
+                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
+                    </div>
+                    <div class="mini-cart-info">
+                        <h6><a href="#">Wheel Bearing Retainer</a></h6>
+                        <span class="mini-cart-quantity">1 x $65.00</span>
+                    </div>
+                </div>
+                <div class="mini-cart-item clearfix">
+                    <div class="mini-cart-img">
+                        <a href="#"><img src="img/product/2.png" alt="Image"></a>
+                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
+                    </div>
+                    <div class="mini-cart-info">
+                        <h6><a href="#">3 Rooms Manhattan</a></h6>
+                        <span class="mini-cart-quantity">1 x $85.00</span>
+                    </div>
+                </div>
+                <div class="mini-cart-item clearfix">
+                    <div class="mini-cart-img">
+                        <a href="#"><img src="img/product/3.png" alt="Image"></a>
+                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
+                    </div>
+                    <div class="mini-cart-info">
+                        <h6><a href="#">OE Replica Wheels</a></h6>
+                        <span class="mini-cart-quantity">1 x $92.00</span>
+                    </div>
+                </div>
+                <div class="mini-cart-item clearfix">
+                    <div class="mini-cart-img">
+                        <a href="#"><img src="img/product/4.png" alt="Image"></a>
+                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
+                    </div>
+                    <div class="mini-cart-info">
+                        <h6><a href="#">Shock Mount Insulator</a></h6>
+                        <span class="mini-cart-quantity">1 x $68.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-cart-footer">
+                <div class="mini-cart-sub-total">
+                    <h5>Subtotal: <span>$310.00</span></h5>
+                </div>
+                <div class="btn-wrapper">
+                    <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
+                    <a href="cart.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
+                </div>
+                <p>Free Shipping on All Orders Over $100!</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- Utilize Cart Menu End -->
 
     <!-- Utilize Mobile Menu Start -->
     <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
         <div class="ltn__utilize-menu-inner ltn__scrollbar">
             <div class="ltn__utilize-menu-head">
                 <div class="site-logo">
-                    <a href="index.html"><img src="img/black_logo.png" alt="Logo"></a>
+                    <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
                 </div>
-                <button class="ltn__utilize-close">×</button>
+                <!-- <button class="ltn__utilize-close">×</button> -->
             </div>
             
             <div class="ltn__utilize-menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#aboutussection">About</a></li>
-                    <li><a href="#gallerysection">Gallery</a></li>
-                    <li><a href="#floorplansection">Floor Plan</a></li>
-                    <li><a href="#amsection">Amenities</a></li>
-                    <li><a href="#locationsection">Location</a></li>
-                    <li><a href="#locationsection">Enquire Now</a></li>
-                </ul>
+
+                    <li><a href="index.html">Home</a>
+                    <br>
+                    </li>
+                    <li><a href="#about-us">About</a>
+
+                    <li><a href="#gallery">Gallery</a>
+
+
+                    </li>
+                    <li><a href="#floorplan">Floor Plan</a>
+
+                    </li>
+                    <li><a href="#amenities">Amenities</a>
+                        
+                    </li>
+                    <li><a href="#location">Location</a></li>
             </div>
+            
             
             <div class="ltn__social-media-2">
                 <ul>
-                    <li><a href="https://www.facebook.com/moonstonerajhansdreams#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.instagram.com/rajhansmoonstone/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -155,7 +287,7 @@
     <div class="ltn__slider-area ltn__slider-3  section-bg-2">
         <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1">
             <!-- ltn__slide-item -->
-            <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal--- ltn__slide-item-3 bg-image bg-overlay-theme-black-60" data-bs-bg="img/hero-1.jpeg">
+            <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal--- ltn__slide-item-3 bg-image bg-overlay-theme-black-60" data-bs-bg="img/slider/11.jpg">
                 <div class="ltn__slide-item-inner text-center">
                     <div class="container">
                         <div class="row">
@@ -172,9 +304,12 @@
                                         <div class="slide-brief animated">
                                             <p>All homes at Moonstone have an utilitarian plan that implements the latest contemporary design.</p>
                                         </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#locationsection" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
-                                        </div>
+                                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                                            Enquire Now
+                                        </a>
+
+                                      
+
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +318,7 @@
                 </div>
             </div>
             <!-- ltn__slide-item -->
-            <div class="ltn__slide-item ltn__slide-item-2  ltn__slide-item-3-normal--- ltn__slide-item-3 bg-image bg-overlay-theme-black-60" data-bs-bg="img/hero-2.jpeg">
+            <div class="ltn__slide-item ltn__slide-item-2  ltn__slide-item-3-normal--- ltn__slide-item-3 bg-image bg-overlay-theme-black-60" data-bs-bg="img/slider/12.jpg">
                 <div class="ltn__slide-item-inner  text-right text-end">
                     <div class="container">
                         <div class="row">
@@ -196,9 +331,14 @@
                                         <div class="slide-brief animated">
                                             <p>Rajhans group is one of the most preferred real estate developers in Vasai. We at Rajhans group are driven by passion to create magic in the lives of scores of customers.</p>
                                         </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#locationsection" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
-                                        </div>
+                                        
+                                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                                            Enquire Now
+                                        </a>
+
+                                        
+
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +347,7 @@
                 </div>
             </div>
             <!-- ltn__slide-item -->
-            <div class="ltn__slide-item ltn__slide-item-2  ltn__slide-item-3-normal--- ltn__slide-item-3 bg-image bg-overlay-theme-black-60" data-bs-bg="img/hero-3.jpg">
+            <div class="ltn__slide-item ltn__slide-item-2  ltn__slide-item-3-normal--- ltn__slide-item-3 bg-image bg-overlay-theme-black-60" data-bs-bg="img/slider/13.jpg">
                 <div class="ltn__slide-item-inner  text-left">
                     <div class="container">
                         <div class="row">
@@ -219,9 +359,10 @@
                                         <div class="slide-brief animated">
                                             <p>Moonstone offers you stimulating and immersive amenities that enables you to embark on a journey of higher quality living.</p>
                                         </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#locationsection" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
-                                        </div>
+                                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                                            Enquire Now
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +377,7 @@
 
   
      <!-- ABOUT US AREA START -->
-     <div class="ltn__about-us-area pt-120 pb-70 mt--30" id="aboutussection">
+     <div id= "about-us" class="ltn__about-us-area pt-120 pb-70 mt--30">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 align-self-center">
@@ -282,9 +423,73 @@
                             <p>"Where luxury meets comfort, and life meets its perfect home.
                                 Discover the elegance of living at Yours For Life." </p>
                         </div>
-                        <div class="btn-wrapper animated">
-                            <a href="#locationsection" class="theme-btn-1 btn btn-effect-1">Enquire Now</a>
-                        </div>
+
+                       <!-- Enquire Now Button -->
+                        <!-- Enquire Now Button -->
+                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                            Enquire Now
+                        </a>
+                        
+<!-- Enquiry Modal -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enquiryModalLabel">Enquiry Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="enquiryForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact" class="form-label">Contact</label>
+                        <input type="text" class="form-control" id="contact" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap CSS & JS (Ensure you include Bootstrap in your project) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Enquiry Modal -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enquiryModalLabel">Enquiry Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="enquiryForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact" class="form-label">Contact</label>
+                        <input type="text" class="form-control" id="contact" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap CSS & JS (Ensure you include Bootstrap in your project) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
                     </div>
                 </div>
             </div>
@@ -298,9 +503,9 @@
 
   
     <!-- IMAGE SLIDER AREA START (img-slider-3) -->
-    <h2 class="text-center" style="padding: 30px;" id="gallerysection">Gallery</h2>
+    <h2 class="text-center" style="padding: 30px;">Gallery</h2>
 
-    <div class="ltn__img-slider-area mb-90">
+    <div id="gallery"ltn__img-slider-area mb-90">
         <div class="container-fluid">
             <div class="row ltn__image-slider-5-active slick-arrow-1 slick-arrow-1-inner ltn__no-gutter-all">
                 <div class="col-lg-12">
@@ -363,9 +568,9 @@
 
             <!-- Portfolio Wrapper Start -->
             <!-- (ltn__gallery-info-hide) Class for 'ltn__gallery-item-info' not showing -->
-            <h2 class="text-center" id="floorplansection">Floor Plans</h2>
+            <h2 class="text-center">Floor Plans</h2>
 
-            <div class="ltn__gallery-active row ltn__gallery-style-2 ltn__gallery-info-hide---">
+            <div id="floorplan" class="ltn__gallery-active row ltn__gallery-style-2 ltn__gallery-info-hide---">
                 <div class="ltn__gallery-sizer col-1"></div>
 
                 <!-- gallery-item -->
@@ -378,9 +583,12 @@
                         </div>
                         
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
-                    </div>
+                    <br>
+
+                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                        Enquire Now
+                    </a>
+                    
                 </div>
                 
 
@@ -395,9 +603,10 @@
                         </div>
                         
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
-                    </div>
+                    <br>
+                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                        Enquire Now
+                    </a>
                 </div>
                 <!-- gallery-item -->
                 <div class="ltn__gallery-item filter_category_1 col-lg-4 col-sm-6 col-12">
@@ -410,9 +619,11 @@
                         </div>
                         
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
-                    </div>
+                    <br>
+
+                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                                            Enquire Now
+                                        </a>
                 </div>
                 <!-- gallery-item -->
                 <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
@@ -425,9 +636,11 @@
                         </div>
                        
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
-                    </div>
+                    <br>
+
+                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                                            Enquire Now
+                                        </a>
                 </div>
                
                 <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
@@ -440,10 +653,10 @@
                         </div>
                         
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">View</a>
-                    </div>
-                </div>
+                    <br>
+                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                        Enquire Now
+                    </a>                </div>
                
                
               
@@ -458,9 +671,10 @@
                         </div>
                        
                     </div>
-                    <div class="btn-wrapper text-center">
-                        <a href="#" class="btn btn-transparent btn-effect-3 btn-border">View</a>
-                    </div>
+                    <br>
+                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                        Enquire Now
+                    </a>
                 </div>
                
                                
@@ -500,9 +714,9 @@
     
     
     <!-- TEAM AREA START (Team - 3) -->
-    <h2 class="text-center" id="amsection">Amentities</h2>
+    <h2 class="text-center">Amentities</h2>
 
-    <div class="ltn__team-area pt-110 pb-90">
+    <div id="amenities" class="ltn__team-area pt-110 pb-90">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-sm-6">
@@ -518,9 +732,10 @@
                                 <li>Ample Parking</li>
                                 <li>Power Back-up for Lift and Common Areas</li>
                             </ul>
-                            <div class="btn-wrapper text-center">
-                                <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">Know More</a>
-                            </div>
+                            <br>
+                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                                Enquire Now
+                            </a>
                              <div class="ltn__social-media">
                             
                                 
@@ -541,10 +756,12 @@
                                 <li>CCTV Night Vision Camera</li>
                                 <li>Fire Safety</li>
                             </ul>
-                            <div class="btn-wrapper text-center">
-                                <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">Know More</a>
-                            </div>
-                            <div class="ltn__social-media">
+                            
+                            <br>
+
+                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                                            Enquire Now
+                                        </a><div class="ltn__social-media">
                                 
                             </div>
                         </div>
@@ -563,9 +780,11 @@
                                 <li>Vitrified Tiles</li>
                                 <li>Branded Sanitary Fittings</li>
                             </ul>
-                            <div class="btn-wrapper text-center">
-                                <a href="#locationsection" class="btn btn-transparent btn-effect-3 btn-border">Know More</a>
-                            </div>
+                            <br>
+                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                                Enquire Now
+                            </a>
+
                             <div class="ltn__social-media">
                                
                             </div>
@@ -585,7 +804,7 @@
 
 
    <!-- CONTACT MESSAGE AREA START -->
-   |<div class="ltn__contact-message-area mb-120 mb--100" id="locationsection">
+   |<div class="ltn__contact-message-area mb-120 mb--100">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -662,7 +881,7 @@ document.getElementById("contact-form").reset();
 
 
     <!-- GOOGLE MAP AREA START -->
-    <div class="google-map mb-120">
+    <div id="location"class="google-map mb-120">
        
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3764.021945284643!2d72.8172161454773!3d19.368202429485383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ae8e2fa22821%3A0x88a95e3e485e2db2!2sSt%20Gonsalo%20Garcia%20Church%20Rd%2C%20Suyog%20Nagar%2C%20Vasai%20West%2C%20Vasai-Virar%2C%20Maharashtra%20401202!5e0!3m2!1sen!2sin!4v1596223366075!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
@@ -679,9 +898,9 @@ document.getElementById("contact-form").reset();
                             <h1>Looking for a dream home?</h1>
                             <p>We can help you realize your dream of a new home</p>
                         </div>
-                        <div class="btn-wrapper">
-                            <a class="btn btn-effect-3 btn-white" href="#locationsection">Enquire Properties <i class="icon-next"></i></a>
-                        </div>
+                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: blue;    border-color: blue;">
+                            Enquire Now
+                        </a>
                     </div>
                 </div>
             </div>
