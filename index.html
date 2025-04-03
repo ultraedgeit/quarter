@@ -31,6 +31,9 @@
 
     <!-- Add your site or content here -->
 
+
+    
+
  
 
 <!-- Body main wrapper start -->
@@ -235,8 +238,8 @@
                                                 <i class="fa fa-play"></i>
                                             </a>
                                         </div>
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> World-Class Design</h6>
-                                        <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
+                                        <!-- <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> World-Class Design</h6> -->
+                                            <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
                                         <div class="slide-brief animated">
                                             <p>All homes at Moonstone have an utilitarian plan that implements the latest contemporary design.</p>
                                         </div>
@@ -438,29 +441,85 @@
                             </a>
                             </div>
                                     <!-- Enquiry Modal -->
-                                    <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <!-- <h5 class="modal-title" id="enquiryModalLabel">Enquiry Form</h5> -->
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form id="enquiryForm">
-                                                        <div class="mb-3">
-                                                            <label for="name" class="form-label">Name</label>
-                                                            <input type="text" class="form-control" id="name" required>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="contact" class="form-label">Contact</label>
-                                                            <input type="text" class="form-control" id="contact" required>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   <!-- Enquiry Modal -->
+                                    <!-- Enquiry Modal -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold text-white" id="enquiryModalLabel">Real Estate Enquiry Form</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Body -->
+            <div class="modal-body">
+                <p class="text-muted text-center">Fill out the form below, and our agent will contact you shortly.</p>
+                <form id="enquiryForm" class="needs-validation" novalidate>
+                    <div class="row g-3">
+                        <!-- Full Name -->
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                            <div class="invalid-feedback">Please enter your full name.</div>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="col-md-6">
+                            <label for="contact" class="form-label">Contact Number <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="contact" placeholder="Enter your contact number" required>
+                            <div class="invalid-feedback">Please enter a valid contact number.</div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+
+                        <!-- Property Type -->
+                        <div class="col-md-6">
+                            <label for="propertyType" class="form-label">Property Type <span class="text-danger">*</span></label>
+                            <select class="form-select" id="propertyType" required>
+                                <option value="" disabled selected>Select property type</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="villa">Villa</option>
+                                <option value="commercial">Commercial Property</option>
+                                <option value="land">Land / Plot</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a property type.</div>
+                        </div>
+
+                        <!-- Budget -->
+                        <div class="col-md-6">
+                            <label for="budget" class="form-label">Budget Range</label>
+                            <input type="text" class="form-control" id="budget" placeholder="e.g., 50L - 1Cr">
+                        </div>
+
+                        <!-- Preferred Location -->
+                        <div class="col-md-6">
+                            <label for="location" class="form-label">Preferred Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Enter preferred location">
+                        </div>
+
+                        <!-- Additional Message -->
+                        <div class="col-12">
+                            <label for="message" class="form-label">Additional Message</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Mention any specific requirements"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary w-100">Submit Enquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
                                     
                                     <!-- Bootstrap CSS & JS (Ensure you include Bootstrap in your project) -->
                                     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -567,7 +626,7 @@
                             <!-- View Button Positioned on Image -->
                             <div class="btn-wrapper animated">
                                 <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                    View
+                                    DOWNNLOAD
                                 </a>
                             </div>
                         </div>
@@ -621,7 +680,7 @@
                             <!-- View Button Positioned on Image -->
                             <div class="btn-wrapper animated">
                                 <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                    View
+                                    DOWNNLOAD
                                 </a>
                             </div>
                         </div>
@@ -638,7 +697,8 @@
                             <!-- View Button Positioned on Image -->
                             <div class="btn-wrapper animated">
                                 <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                    View
+                                    DOWNNLOAD
+
                                 </a>
                             </div>
                         </div>
@@ -655,7 +715,8 @@
                             <!-- View Button Positioned on Image -->
                             <div class="btn-wrapper animated">
                                 <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                    View
+                                    DOWNNLOAD
+
                                 </a>
                             </div>
                         </div>
@@ -671,7 +732,8 @@
                             <!-- View Button Positioned on Image -->
                             <div class="btn-wrapper animated">
                                 <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                    View
+                                    DOWNNLOAD
+
                                 </a>
                             </div>
                         </div>
@@ -690,7 +752,8 @@
                             <!-- View Button Positioned on Image -->
                             <div class="btn-wrapper animated">
                                 <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                    View
+                                    DOWNNLOAD
+
                                 </a>
                             </div>
                         </div>
@@ -741,86 +804,87 @@
         <span style="flex: 1; border: 1px solid #000; margin-left: 57px;"></span>
     </h1> 
 
-    <div class="ltn__team-area pt-110 pb-90">
+    <div class="ltn__team-area pt-110 pb-90" style="background: linear-gradient(to right, #f7f9fc, #edf1f7);">
         <div class="container">
             <div class="row justify-content-center">
+                <div class="col-12 text-center mb-5">
+                    <h2 style="color: #122840; font-size: 42px; font-weight: 700; margin-bottom: 15px;">LUXURY LIVING REDEFINED</h2>
+                    <p style="color: #555; font-size: 18px; max-width: 800px; margin: 0 auto;">Experience the perfect blend of elegance, comfort, and modern innovation at CATCHY Residences</p>
+                </div>
+                
                 <div class="col-lg-4 col-sm-6">
-                    <div class="ltn__team-item ltn__team-item-3---">
-                        <div class="team-img">
-                            <img src="img/am/am_1.jpg" alt="Image">
+                    <div class="ltn__team-item ltn__team-item-3---" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
+                        <div class="team-img" style="position: relative;">
+                            <img src="img/am/am_1.jpg" alt="Lifestyle Features" style="width: 100%; height: 250px; object-fit: cover;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(18,40,64,0.7)); pointer-events: none;"></div>
                         </div>
-                        <div class="team-info">
-                          
-                            <h4>Lifestyle Features</h4>
-                            <ul>
-                                <li>Double-Height Lobby with Lounge</li>
-                                <li>Ample Parking</li>
-                                <li>Power Back-up for Lift and Common Areas</li>
+                        <div class="team-info" style="padding: 25px; background-color: white;">
+                            <h4 style="color: #122840; font-size: 24px; font-weight: 600; border-bottom: 2px solid #122840; padding-bottom: 15px; margin-bottom: 15px;">PREMIUM LIFESTYLE</h4>
+                            <ul style="list-style: none; padding-left: 0; margin-bottom: 25px;">
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #eee; color: #555;"><i class="fas fa-check-circle" style="color: #122840; margin-right: 10px;"></i> Double-Height Lobby with Lounge</li>
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #eee; color: #555;"><i class="fas fa-check-circle" style="color: #122840; margin-right: 10px;"></i> Ample Parking</li>
+                                <li style="padding: 8px 0; color: #555;"><i class="fas fa-check-circle" style="color: #122840; margin-right: 8px;"></i> Power Backup to Lift and Common Areas</li>
                             </ul>
-
+    
                             <div class="btn-wrapper animated">
-                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; border-color: #122840; display: block; text-align: center; padding: 12px; font-weight: 600; border-radius: 6px; transition: all 0.3s ease;">
                                   Know More
                                 </a>
-                                </div>
-
-                             <div class="ltn__social-media">
-                            
-                                
                             </div>
+    
+                             <div class="ltn__social-media">
+                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-lg-4 col-sm-6">
-                    <div class="ltn__team-item ltn__team-item-3---">
-                        <div class="team-img">
-                            <img src="img/am/am_2.jpg" alt="Image">
+                    <div class="ltn__team-item ltn__team-item-3---" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
+                        <div class="team-img" style="position: relative;">
+                            <img src="img/am/am_2.jpg" alt="Security Features" style="width: 100%; height: 250px; object-fit: cover;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(18,40,64,0.7)); pointer-events: none;"></div>
                         </div>
-                        <div class="team-info">
-                            
-                            <h4>Security Features</h4>
-                            <ul>
-                                <li>Bio-Metric Security System</li>
-                                <li>CCTV Night Vision Camera</li>
-                                <li>Fire Safety</li>
+                        <div class="team-info" style="padding: 25px; background-color: white;">
+                            <h4 style="color: #122840; font-size: 24px; font-weight: 600; border-bottom: 2px solid #122840; padding-bottom: 15px; margin-bottom: 15px;">ADVANCED SECURITY</h4>
+                            <ul style="list-style: none; padding-left: 0; margin-bottom: 25px;">
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #eee; color: #555;"><i class="fas fa-shield-alt" style="color: #122840; margin-right: 10px;"></i> Bio-Metric Security System</li>
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #eee; color: #555;"><i class="fas fa-video" style="color: #122840; margin-right: 10px;"></i> CCTV Night Vision Camera</li>
+                                <li style="padding: 8px 0; color: #555;"><i class="fas fa-fire-extinguisher" style="color: #122840; margin-right: 10px;"></i> Fire Safety</li>
                             </ul>
                             
                             <div class="btn-wrapper animated">
-                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; border-color: #122840; display: block; text-align: center; padding: 12px; font-weight: 600; border-radius: 6px; transition: all 0.3s ease;">
                                     Know More
                                 </a>
-                                </div>
-
-
+                            </div>
+    
                             <div class="ltn__social-media">
-                                
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-lg-4 col-sm-6">
-                    <div class="ltn__team-item ltn__team-item-3---">
-                        <div class="team-img">
-                            <img src="img/am/am_3.jpg" alt="Image">
+                    <div class="ltn__team-item ltn__team-item-3---" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; height: 100%;">
+                        <div class="team-img" style="position: relative;">
+                            <img src="img/am/am_3.jpg" alt="Interior Features" style="width: 100%; height: 250px; object-fit: cover;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(18,40,64,0.7)); pointer-events: none;"></div>
                         </div>
-                        <div class="team-info">
-                            
-                            <h4>Interior Features</h4>
-                            <ul>
-                                <li>Modular Kitchen</li>
-                                <li>Vitrified Tiles</li>
-                                <li>Branded Sanitary Fittings</li>
+                        <div class="team-info" style="padding: 25px; background-color: white;">
+                            <h4 style="color: #122840; font-size: 24px; font-weight: 600; border-bottom: 2px solid #122840; padding-bottom: 15px; margin-bottom: 15px;">ELEGANT INTERIORS</h4>
+                            <ul style="list-style: none; padding-left: 0; margin-bottom: 25px;">
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #eee; color: #555;"><i class="fas fa-utensils" style="color: #122840; margin-right: 10px;"></i> Modular Kitchen</li>
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #eee; color: #555;"><i class="fas fa-border-all" style="color: #122840; margin-right: 10px;"></i> Vitrified Tiles</li>
+                                <li style="padding: 8px 0; color: #555;"><i class="fas fa-shower" style="color: #122840; margin-right: 10px;"></i> Branded Sanitary Fittings</li>
                             </ul>
                             
                             <div class="btn-wrapper animated">
-                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; border-color: #122840; display: block; text-align: center; padding: 12px; font-weight: 600; border-radius: 6px; transition: all 0.3s ease;">
                                     Know more
                                 </a>
-                                </div>
-
-
+                            </div>
+    
                             <div class="ltn__social-media">
-                               
                             </div>
                         </div>
                     </div>
@@ -947,6 +1011,104 @@ document.getElementById("contact-form").reset();
     </div>
     <!-- CALL TO ACTION END -->
 
+
+    
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const chatHeader = document.getElementById("chat-header");
+  const chatContent = document.getElementById("chat-content");
+  const messageInput = document.getElementById("message-input");
+  const closeBtn = document.getElementById("close-btn");
+  const whatsappBtn = document.getElementById("whatsapp-btn");
+  const chatIcon = document.getElementById("chat-icon");
+  let isFirstOpen = true;
+  let hasBeenOpened = false;
+
+  function showChat() {
+    chatIcon.style.display = "none";
+    chatHeader.style.display = "flex";
+    chatContent.style.display = "block";
+    messageInput.style.display = "flex";
+
+    setTimeout(() => {
+      chatHeader.style.opacity = "1";
+      chatHeader.style.transform = "translateY(0)";
+      chatContent.style.opacity = "1";
+      chatContent.style.transform = "translateY(0)";
+      messageInput.style.opacity = "1";
+      messageInput.style.transform = "translateY(0)";
+    }, 50);
+
+    if (isFirstOpen) {
+      setTimeout(showTypingIndicator, 1000);
+      isFirstOpen = false;
+    }
+    hasBeenOpened = true;
+  }
+
+  function hideChat() {
+    chatHeader.style.opacity = "0";
+    chatHeader.style.transform = "translateY(20px)";
+    chatContent.style.opacity = "0";
+    chatContent.style.transform = "translateY(20px)";
+    messageInput.style.opacity = "0";
+    messageInput.style.transform = "translateY(20px)";
+    setTimeout(() => {
+      chatHeader.style.display = "none";
+      chatContent.style.display = "none";
+      messageInput.style.display = "none";
+      chatIcon.style.display = "flex";
+    }, 500);
+  }
+
+  let autoOpenTimeout = setTimeout(() => {
+    if (!hasBeenOpened) {
+      showChat();
+    }
+  }, 3000);
+
+  closeBtn.addEventListener("click", hideChat);
+
+  chatIcon.addEventListener("click", (e) => {
+    e.preventDefault();
+    clearTimeout(autoOpenTimeout);
+    showChat();
+  });
+
+  whatsappBtn.addEventListener("click", () => {
+    window.open(
+      "https://api.whatsapp.com/send/?phone=%2B12345678901&text&type=phone_number&app_absent=0",
+      "_blank"
+    );
+  });
+
+  function showTypingIndicator() {
+    const typingIndicator = document.createElement("div");
+    typingIndicator.className = "typing-indicator";
+    typingIndicator.innerHTML = "<span></span><span></span><span></span>";
+    chatContent.appendChild(typingIndicator);
+    chatContent.scrollTop = chatContent.scrollHeight;
+
+    setTimeout(() => {
+      typingIndicator.remove();
+      showIncomingMessage();
+    }, 3000);
+  }
+
+  function showIncomingMessage() {
+    const incomingMessage = document.createElement("div");
+    incomingMessage.className = "message received";
+    incomingMessage.textContent =
+      "How can We help you? :)";
+    chatContent.appendChild(incomingMessage);
+    chatContent.scrollTop = chatContent.scrollHeight;
+  }
+});
+
+</script>
+
+
     <!-- FOOTER AREA START -->
     <footer class="ltn__footer-area  ">
         <div class="footer-top-area  section-bg-2 plr--5">
@@ -1020,9 +1182,39 @@ document.getElementById("contact-form").reset();
             </div>
         </div>
     </footer>
+
+
     <!-- FOOTER AREA END -->
 
+    <div class="chat-header" id="chat-header">
+        <div class="avatar-container">
+          <img src="https://photosrush.com/wp-content/uploads/dp-for-whatsapp-no-dp.jpg" alt="Avatar">
+          <div class="online-dot"></div>
+        </div>
+        <div class="chat-header-info">
+          <h1 style="transform: translateY(2px);">Moonstone</h1>
+          <div style="color: #eeeeee;">online</div>
+      
+        </div>
+        <button class="close-btn" id="close-btn">&times;</button>
+      </div>
+      <div class="chat-content" id="chat-content">
+      </div>
+      <div class="message-input" id="message-input">
+        <button class="whatsapp-btn" id="whatsapp-btn">Chat in WhatsApp</button>
+      </div>
+      <div class="chat-icon" id="chat-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      </div>
 
+
+      <!--pop up form-->
+
+
+      
+
+
+     
 <!-- Body main wrapper end -->
 
     <!-- preloader area start -->
@@ -1040,6 +1232,9 @@ document.getElementById("contact-form").reset();
     <script src="js/plugins.js"></script>
     <!-- Main JS -->
     <script src="js/main.js"></script>
+
+     
+</div>
   
 </body>
 
