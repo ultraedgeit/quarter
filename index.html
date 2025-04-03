@@ -91,7 +91,58 @@
                                         <li><a href="#floorplansection">Floor Plan</a></li>
                                         <li><a href="#amsection">Amenities</a></li>
                                         <li><a href="#locationsection">Location</a></li>
-                                        <li class="special-link"><a href="#locationsection  ">Enquire Now</a></li>
+                                        <li class="special-link">
+                                            <a href="#" id="enquireBtn" style="padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Enquire Now</a>
+                                        </li>
+                                        
+                                        <!-- Overlay -->
+                                        <div class="overlay" id="overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 999;"></div>
+                                        
+                                        <!-- Popup Form -->
+                                        <div class="popup-form" id="popupForm" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; width: 350px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); text-align: center; z-index: 1000;">
+                                            <button class="close-btn" id="closeBtn" style="background: none; border: none; font-size: 18px; cursor: pointer; position: absolute; top: 10px; right: 15px;">✖</button>
+                                            <form>
+                                                <div style="margin-bottom: 15px; text-align: left;">
+                                                    <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px;">Name</label>
+                                                    <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                                                </div>
+                                        
+                                                <div style="margin-bottom: 15px; text-align: left;">
+                                                    <label for="contact" style="display: block; font-weight: bold; margin-bottom: 5px;">Contact No</label>
+                                                    <input type="text" id="contact" name="contact" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                                                </div>
+                                        
+                                                <button type="submit" style="background: #122840; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">Submit</button>
+                                            </form>
+                                        </div>
+                                        
+                                        <script>
+                                            // Get elements
+                                            const enquireBtn = document.getElementById('enquireBtn');
+                                            const popupForm = document.getElementById('popupForm');
+                                            const closeBtn = document.getElementById('closeBtn');
+                                            const overlay = document.getElementById('overlay');
+                                        
+                                            // Show the popup when button is clicked
+                                            enquireBtn.addEventListener('click', function(event) {
+                                                event.preventDefault();
+                                                popupForm.style.display = 'block';
+                                                overlay.style.display = 'block';
+                                            });
+                                        
+                                            // Close the popup
+                                            closeBtn.addEventListener('click', function() {
+                                                popupForm.style.display = 'none';
+                                                overlay.style.display = 'none';
+                                            });
+                                        
+                                            // Close the popup if overlay is clicked
+                                            overlay.addEventListener('click', function() {
+                                                popupForm.style.display = 'none';
+                                                overlay.style.display = 'none';
+                                            });
+                                        </script>
+                                        
                                     </ul>
                                 </div>
                             </nav>
