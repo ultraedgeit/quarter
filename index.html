@@ -92,9 +92,10 @@
                                         <li><a href="#amsection">Amenities</a></li>
                                         <li><a href="#locationsection">Location</a></li>
 
+                                       
+                                        
                                         <li class="special-link">
-
-                                            <a href="#" id="enquireBtn" style="padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Enquire Now</a>
+                                            <a href="#" id="enquireBtn" style="padding: 10px 20px; background: #122840; ; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Enquire Now</a>
                                         </li>
                                         
                                         <!-- Overlay -->
@@ -114,7 +115,7 @@
                                                     <input type="text" id="contact" name="contact" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
                                                 </div>
                                         
-                                                <button type="submit" style="background: #122840; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">Submit</button>
+                                                <button type="submit" style="background: #122840; ; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">Submit</button>
                                             </form>
                                         </div>
                                         
@@ -143,7 +144,7 @@
                                                 popupForm.style.display = 'none';
                                                 overlay.style.display = 'none';
                                             });
-                                        </script>
+                                        </script>
                                         
                                     </ul>
                                 </div>
@@ -189,10 +190,11 @@
                     <li><a href="#amsection">Amenities</a></li>
                     <li><a href="#locationsection">Location</a></li>
 
-                    <!-- <div class="btn-wrapper animated">
-                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Enquire Now</a>
-                    </div> -->
-
+                    <div class="btn-wrapper animated">
+                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; border-color: #122840;">
+                          Enquire Now
+                        </a>
+                        </div>
 
                 </ul>
 
@@ -232,71 +234,12 @@
                                             <p>All homes at Moonstone have an utilitarian plan that implements the latest contemporary design.</p>
                                         </div>
 
-
                                         <div class="btn-wrapper animated">
-                                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Make An Enquiry</a>
+                                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                            Enquire Now
+                                        </a>
                                         </div>
-                                        
-                                        <!-- Popup Form -->
-                                        <div id="popupForm" class="popup-overlay">
-                                            <div class="popup-content">
-                                                <span class="close-btn" onclick="closePopup()">&times;</span>
-                                                <h2>Enquiry Form</h2>
-                                                <form>
-                                                    <label for="name">Name:</label>
-                                                    <input type="text" id="name" name="name" required>
-                                                    
-                                                    <label for="contact">Contact No:</label>
-                                                    <input type="tel" id="contact" name="contact" required>
-                                                    
-                                                    <button type="submit" class="theme-btn-1 btn btn-effect-1">Submit</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- CSS -->
-                                        <style>
-                                        .popup-overlay {
-                                            display: none;
-                                            position: fixed;
-                                            top: 0;
-                                            left: 0;
-                                            width: 100%;
-                                            height: 100%;
-                                            background: rgba(0, 0, 0, 0.5);
-                                            justify-content: center;
-                                            align-items: center;
-                                        }
-                                        
-                                        .popup-content {
-                                            background: #fff;
-                                            padding: 20px;
-                                            border-radius: 5px;
-                                            text-align: center;
-                                            width: 300px;
-                                            position: relative;
-                                        }
-                                        
-                                        .close-btn {
-                                            position: absolute;
-                                            top: 10px;
-                                            right: 15px;
-                                            font-size: 20px;
-                                            cursor: pointer;
-                                        }
-                                        </style>
-                                        
-                                        <!-- JavaScript -->
-                                        <script>
-                                        function openPopup() {
-                                            document.getElementById("popupForm").style.display = "flex";
-                                        }
-                                        
-                                        function closePopup() {
-                                            document.getElementById("popupForm").style.display = "none";
-                                        }
-                                        </script>
-                                        
+                                 
                                         
 
 
@@ -323,10 +266,12 @@
                                         <div class="slide-brief animated">
                                             <p>Rajhans group is one of the most preferred real estate developers in Vasai. We at Rajhans group are driven by passion to create magic in the lives of scores of customers.</p>
                                         </div>
-                                        
-                                        <div class="btn-wrapper animated">
-                                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Make An Enquiry</a>
-                                        </div>
+                                            
+                        <div class="btn-wrapper animated">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                Enquire Now
+                            </a>
+                            </div>
 
                                     </div>
                                 </div>
@@ -349,10 +294,12 @@
                                             <p>Moonstone offers you stimulating and immersive amenities that enables you to embark on a journey of higher quality living.</p>
                                         </div>
 
-                                        <div class="btn-wrapper animated">
-                                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Make An Enquiry</a>
-                                        </div>
-
+                                            
+                        <div class="btn-wrapper animated">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                Enquire Now
+                            </a>
+                            </div>
                                     </div>
                                 </div>
                             </div>
@@ -414,11 +361,40 @@
                                 Discover the elegance of living at Yours For Life." </p>
                         </div>
 
+                           
                         <div class="btn-wrapper animated">
-                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Enquire now</a>
-                        </div>
-
-
+                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                Enquire Now
+                            </a>
+                            </div>
+                                    <!-- Enquiry Modal -->
+                                    <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <!-- <h5 class="modal-title" id="enquiryModalLabel">Enquiry Form</h5> -->
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form id="enquiryForm">
+                                                        <div class="mb-3">
+                                                            <label for="name" class="form-label">Name</label>
+                                                            <input type="text" class="form-control" id="name" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="contact" class="form-label">Contact</label>
+                                                            <input type="text" class="form-control" id="contact" required>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Bootstrap CSS & JS (Ensure you include Bootstrap in your project) -->
+                                    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
                     </div>
                 </div>
             </div>
@@ -514,9 +490,12 @@
                     </div>
 
 
+                        
                     <div class="btn-wrapper animated">
-                                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
-                                        </div>
+                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                            View
+                        </a>
+                        </div>
 
                 </div>
                 
@@ -532,10 +511,11 @@
                         </div>
                         
                     </div>
-
                     <div class="btn-wrapper animated">
-                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
-                    </div>
+                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                            View
+                        </a>
+                        </div>
 
                 </div>
                 <!-- gallery-item -->
@@ -551,9 +531,10 @@
                     </div>
 
                     <div class="btn-wrapper animated">
-                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
-                    </div>
-
+                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                            View
+                        </a>
+                        </div>
                 </div>
                 <!-- gallery-item -->
                 <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
@@ -566,10 +547,11 @@
                         </div>
                        
                     </div>
-
                     <div class="btn-wrapper animated">
-                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
-                    </div>
+                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                            View
+                        </a>
+                        </div>
 
                 </div>
                
@@ -584,10 +566,11 @@
                         
                     </div>
 
-
                     <div class="btn-wrapper animated">
-                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
-                    </div>
+                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                            View
+                        </a>
+                        </div>
 
 
                 </div>
@@ -607,8 +590,10 @@
                     </div>
                     
                     <div class="btn-wrapper animated">
-                        <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">View</a>
-                    </div>
+                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                            View
+                        </a>
+                        </div>
 
                 </div>
                
@@ -669,8 +654,10 @@
                             </ul>
 
                             <div class="btn-wrapper animated">
-                                <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Know More</a>
-                            </div>
+                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                  Know More
+                                </a>
+                                </div>
 
                              <div class="ltn__social-media">
                             
@@ -694,8 +681,10 @@
                             </ul>
                             
                             <div class="btn-wrapper animated">
-                                <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Know More</a>
-                            </div>
+                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                    Know More
+                                </a>
+                                </div>
 
 
                             <div class="ltn__social-media">
@@ -719,8 +708,10 @@
                             </ul>
                             
                             <div class="btn-wrapper animated">
-                                <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Know More</a>
-                            </div>
+                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                    Know more
+                                </a>
+                                </div>
 
 
                             <div class="ltn__social-media">
@@ -838,8 +829,10 @@ document.getElementById("contact-form").reset();
                         </div>
 
                         <div class="btn-wrapper animated">
-                            <a href="javascript:void(0);" class="theme-btn-1 btn btn-effect-1" onclick="openPopup()">Enquire Properties</a>
-                        </div>
+                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                               Enquire Properties
+                            </a>
+                            </div>
 
 
                     </div>
