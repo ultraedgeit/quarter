@@ -100,28 +100,39 @@
                                        
                                         
                                         <li class="special-link">
-                                            <a href="#" id="enquireBtn" style="padding: 10px 20px; background: #122840; ; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Enquire Now</a>
+                                            <a href="#" id="enquireBtn" style="padding: 12px 25px; background: linear-gradient(to right, #122840, #1e3c61); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(18, 40, 64, 0.3); transition: all 0.3s ease;">Enquire Now</a>
                                         </li>
                                         
                                         <!-- Overlay -->
-                                        <div class="overlay" id="overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 999;"></div>
+                                        <div class="overlay" id="overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 999; backdrop-filter: blur(5px); transition: all 0.3s ease;"></div>
                                         
                                         <!-- Popup Form -->
-                                        <div class="popup-form" id="popupForm" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; width: 350px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); text-align: center; z-index: 1000;">
-                                            <button class="close-btn" id="closeBtn" style="background: none; border: none; font-size: 18px; cursor: pointer; position: absolute; top: 10px; right: 15px;">✖</button>
+                                        <div class="popup-form" id="popupForm" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 35px; width: 400px; border-radius: 15px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); text-align: center; z-index: 1000; transition: all 0.4s ease;">
+                                            <button class="close-btn" id="closeBtn" style="background: #f0f0f0; border: none; font-size: 16px; cursor: pointer; position: absolute; top: 15px; right: 15px; height: 30px; width: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">✖</button>
+                                            
+                                            <h2 style="margin-top: 0; margin-bottom: 25px; color: #122840; font-size: 24px;">Get In Touch</h2>
+                                            <p style="margin-bottom: 30px; color: #666; font-size: 15px;">Complete the form below and we'll contact you shortly</p>
+                                            
                                             <form>
-                                                <div style="margin-bottom: 15px; text-align: left;">
-                                                    <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px;">Name</label>
-                                                    <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                                                <div style="margin-bottom: 20px; text-align: left;">
+                                                    <label for="name" style="display: block; font-weight: 600; margin-bottom: 8px; color: #444; font-size: 14px;">Full Name</label>
+                                                    <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; transition: all 0.3s ease; box-sizing: border-box;">
                                                 </div>
                                         
-                                                <div style="margin-bottom: 15px; text-align: left;">
-                                                    <label for="contact" style="display: block; font-weight: bold; margin-bottom: 5px;">Contact No</label>
-                                                    <input type="text" id="contact" name="contact" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                                                <div style="margin-bottom: 20px; text-align: left;">
+                                                    <label for="email" style="display: block; font-weight: 600; margin-bottom: 8px; color: #444; font-size: 14px;">Email Address</label>
+                                                    <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; transition: all 0.3s ease; box-sizing: border-box;">
                                                 </div>
                                         
-                                                <button type="submit" style="background: #122840; ; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">Submit</button>
+                                                <div style="margin-bottom: 30px; text-align: left;">
+                                                    <label for="contact" style="display: block; font-weight: 600; margin-bottom: 8px; color: #444; font-size: 14px;">Contact Number</label>
+                                                    <input type="tel" id="contact" name="contact" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; transition: all 0.3s ease; box-sizing: border-box;">
+                                                </div>
+                                        
+                                                <button type="submit" style="background: linear-gradient(to right, #122840, #1e3c61); border: none; padding: 14px 20px; width: 100%; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; color: white; box-shadow: 0 4px 10px rgba(18, 40, 64, 0.2); transition: all 0.3s ease;">Submit Request</button>
                                             </form>
+                                            
+                                            <p style="margin-top: 20px; font-size: 13px; color: #888;">We respect your privacy and will not share your information.</p>
                                         </div>
                                         
                                         <script>
@@ -130,26 +141,77 @@
                                             const popupForm = document.getElementById('popupForm');
                                             const closeBtn = document.getElementById('closeBtn');
                                             const overlay = document.getElementById('overlay');
+                                            const formInputs = document.querySelectorAll('.popup-form input');
                                         
-                                            // Show the popup when button is clicked
+                                            // Show the popup with animation
                                             enquireBtn.addEventListener('click', function(event) {
                                                 event.preventDefault();
-                                                popupForm.style.display = 'block';
                                                 overlay.style.display = 'block';
+                                                setTimeout(() => {
+                                                    popupForm.style.display = 'block';
+                                                    popupForm.style.opacity = '0';
+                                                    setTimeout(() => {
+                                                        popupForm.style.opacity = '1';
+                                                    }, 50);
+                                                }, 100);
                                             });
                                         
-                                            // Close the popup
-                                            closeBtn.addEventListener('click', function() {
-                                                popupForm.style.display = 'none';
-                                                overlay.style.display = 'none';
+                                            // Add focus effects to inputs
+                                            formInputs.forEach(input => {
+                                                input.addEventListener('focus', function() {
+                                                    this.style.borderColor = '#122840';
+                                                    this.style.boxShadow = '0 0 0 2px rgba(18, 40, 64, 0.1)';
+                                                });
+                                                
+                                                input.addEventListener('blur', function() {
+                                                    this.style.borderColor = '#ddd';
+                                                    this.style.boxShadow = 'none';
+                                                });
                                             });
                                         
-                                            // Close the popup if overlay is clicked
-                                            overlay.addEventListener('click', function() {
-                                                popupForm.style.display = 'none';
-                                                overlay.style.display = 'none';
+                                            // Close the popup with animation
+                                            function closePopup() {
+                                                popupForm.style.opacity = '0';
+                                                setTimeout(() => {
+                                                    popupForm.style.display = 'none';
+                                                    overlay.style.display = 'none';
+                                                }, 300);
+                                            }
+                                        
+                                            closeBtn.addEventListener('click', closePopup);
+                                            overlay.addEventListener('click', closePopup);
+                                            
+                                            // Hover effects for buttons
+                                            enquireBtn.addEventListener('mouseover', function() {
+                                                this.style.boxShadow = '0 6px 12px rgba(18, 40, 64, 0.4)';
+                                                this.style.transform = 'translateY(-2px)';
                                             });
-                                        </script>
+                                            
+                                            enquireBtn.addEventListener('mouseout', function() {
+                                                this.style.boxShadow = '0 4px 10px rgba(18, 40, 64, 0.3)';
+                                                this.style.transform = 'translateY(0)';
+                                            });
+                                            
+                                            // Form validation - basic example
+                                            const form = document.querySelector('form');
+                                            form.addEventListener('submit', function(event) {
+                                                event.preventDefault();
+                                                const name = document.getElementById('name').value;
+                                                const contact = document.getElementById('contact').value;
+                                                
+                                                if (name && contact) {
+                                                    // Submit form or display success message
+                                                    this.innerHTML = `<div style="text-align: center;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#122840" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                        </svg>
+                                                        <h3 style="color: #122840; margin-top: 15px;">Thank You!</h3>
+                                                        <p style="color: #666; margin-bottom: 0;">Your enquiry has been submitted successfully. We'll contact you shortly.</p>
+                                                    </div>`;
+                                                }
+                                            });
+                                        </script>
                                         
                                     </ul>
                                 </div>
@@ -239,15 +301,15 @@
                                             </a>
                                         </div>
                                         <!-- <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> World-Class Design</h6> -->
-                                            <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
+                                            <!-- <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
                                         <div class="slide-brief animated">
                                             <p>All homes at Moonstone have an utilitarian plan that implements the latest contemporary design.</p>
-                                        </div>
+                                        </div> -->
 
                                         <div class="btn-wrapper animated">
-                                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                        <!-- <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
                                             Enquire Now
-                                        </a>
+                                        </a> -->
                                         </div>
                                  
                                         
@@ -270,17 +332,17 @@
                             <div class="col-lg-12 align-self-center">
                                 <div class="slide-item-info">
                                     <div class="slide-item-info-inner ltn__slide-animation">
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Rajhans Group
+                                        <!-- <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Rajhans Group
                                         </h6>
                                         <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
                                         <div class="slide-brief animated">
                                             <p>Rajhans group is one of the most preferred real estate developers in Vasai. We at Rajhans group are driven by passion to create magic in the lives of scores of customers.</p>
-                                        </div>
+                                        </div> -->
                                             
-                        <div class="btn-wrapper animated">
-                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                         <div class="btn-wrapper animated">
+                            <!-- <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
                                 Enquire Now
-                            </a>
+                            </a> -->
                             </div>
 
                                     </div>
@@ -298,17 +360,17 @@
                             <div class="col-lg-12 align-self-center">
                                 <div class="slide-item-info">
                                     <div class="slide-item-info-inner ltn__slide-animation">
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Best Amenities</h6>
+                                        <!-- <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Best Amenities</h6>
                                         <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
                                         <div class="slide-brief animated">
                                             <p>Moonstone offers you stimulating and immersive amenities that enables you to embark on a journey of higher quality living.</p>
-                                        </div>
+                                        </div> -->
 
                                             
-                        <div class="btn-wrapper animated">
-                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                         <div class="btn-wrapper animated"> 
+                            <!-- <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
                                 Enquire Now
-                            </a>
+                            </a> --> -->
                             </div>
                                     </div>
                                 </div>
@@ -443,82 +505,75 @@
                                     <!-- Enquiry Modal -->
                                    <!-- Enquiry Modal -->
                                     <!-- Enquiry Modal -->
-<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <!-- Header -->
-            <div class="modal-header">
-                <h5 class="modal-title fw-bold text-white" id="enquiryModalLabel">Real Estate Enquiry Form</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- Body -->
-            <div class="modal-body">
-                <p class="text-muted text-center">Fill out the form below, and our agent will contact you shortly.</p>
-                <form id="enquiryForm" class="needs-validation" novalidate>
-                    <div class="row g-3">
-                        <!-- Full Name -->
-                        <div class="col-md-6">
-                            <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
-                            <div class="invalid-feedback">Please enter your full name.</div>
-                        </div>
-
-                        <!-- Contact -->
-                        <div class="col-md-6">
-                            <label for="contact" class="form-label">Contact Number <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" id="contact" placeholder="Enter your contact number" required>
-                            <div class="invalid-feedback">Please enter a valid contact number.</div>
-                        </div>
-
-                        <!-- Email -->
-                        <div class="col-md-6">
-                            <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
-                            <div class="invalid-feedback">Please enter a valid email address.</div>
-                        </div>
-
-                        <!-- Property Type -->
-                        <div class="col-md-6">
-                            <label for="propertyType" class="form-label">Property Type <span class="text-danger">*</span></label>
-                            <select class="form-select" id="propertyType" required>
-                                <option value="" disabled selected>Select property type</option>
-                                <option value="apartment">Apartment</option>
-                                <option value="villa">Villa</option>
-                                <option value="commercial">Commercial Property</option>
-                                <option value="land">Land / Plot</option>
-                            </select>
-                            <div class="invalid-feedback">Please select a property type.</div>
-                        </div>
-
-                        <!-- Budget -->
-                        <div class="col-md-6">
-                            <label for="budget" class="form-label">Budget Range</label>
-                            <input type="text" class="form-control" id="budget" placeholder="e.g., 50L - 1Cr">
-                        </div>
-
-                        <!-- Preferred Location -->
-                        <div class="col-md-6">
-                            <label for="location" class="form-label">Preferred Location</label>
-                            <input type="text" class="form-control" id="location" placeholder="Enter preferred location">
-                        </div>
-
-                        <!-- Additional Message -->
-                        <div class="col-12">
-                            <label for="message" class="form-label">Additional Message</label>
-                            <textarea class="form-control" id="message" rows="3" placeholder="Mention any specific requirements"></textarea>
-                        </div>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary w-100">Submit Enquiry</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
+                                    <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <!-- Header with Subtle Gradient -->
+                                                <div class="modal-header bg-gradient-primary text-white d-flex justify-content-between align-items-center py-2">
+                                                    <div class="logo-container">
+                                                        <img src="img/logo1.png" alt="Company Logo" height="60">
+                                                    </div>
+                                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                
+                                                <!-- Body with Clean Layout -->
+                                                <div class="modal-body p-4">
+                                                    <div class="mb-4">
+                                                        <h4 class="text-primary fw-normal">Request Property Information</h4>
+                                                        <p class="text-muted small">Complete the form below and one of our agents will contact you shortly</p>
+                                                    </div>
+                                                    
+                                                    <form id="enquiryForm" class="needs-validation" novalidate>
+                                                        <div class="row g-3">
+                                                            <!-- Full Name -->
+                                                            <div class="col-md-6">
+                                                                <label for="name" class="form-label">
+                                                                    Full Name <span class="text-danger">*</span>
+                                                                </label>
+                                                                <input type="text" class="form-control" id="name" 
+                                                                    placeholder="Enter your name" required>
+                                                                <div class="invalid-feedback">Please enter your name.</div>
+                                                            </div>
+                                    
+                                                            <!-- Contact -->
+                                                            <div class="col-md-6">
+                                                                <label for="contact" class="form-label">
+                                                                    Contact Number <span class="text-danger">*</span>
+                                                                </label>
+                                                                <input type="tel" class="form-control" id="contact" 
+                                                                    placeholder="Enter your phone number" required>
+                                                                <div class="invalid-feedback">Please enter a valid phone number.</div>
+                                                            </div>
+                                                            
+                                                            <!-- Email (Optional) -->
+                                                            <div class="col-md-12">
+                                                                <label for="email" class="form-label">
+                                                                    Email Address <small class="text-muted">(Optional)</small>
+                                                                </label>
+                                                                <input type="email" class="form-control" id="email" 
+                                                                    placeholder="Enter your email">
+                                                            </div>
+                                                        </div>
+                                    
+                                                        <!-- Submit Button -->
+                                                        <div class="mt-4 pt-2">
+                                                            <button type="submit" class="btn btn-primary px-4">
+                                                                Submit Enquiry
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                
+                                                <!-- Footer -->
+                                                <div class="modal-footer bg-light py-2">
+                                                    <p class="mb-0 text-muted small">
+                                                        <i class="bi bi-shield-lock me-1"></i>
+                                                        Your information is protected by our privacy policy
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     
                                     <!-- Bootstrap CSS & JS (Ensure you include Bootstrap in your project) -->
