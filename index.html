@@ -278,7 +278,123 @@
     <!-- Utilize Mobile Menu End -->
      
      
-     
+     <!--pop up form -->
+
+     <!-- Simple Attractive Popup Form -->
+<div class="modal fade" id="simpleRegistrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+        <!-- Header with Close Button -->
+        <div class="modal-header border-0 bg-light d-flex justify-content-end p-3">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        
+        
+        <div class="modal-body pt-0">
+          <div class="text-center mb-4">
+            <!-- Your Logo - Replace with your actual logo path -->
+            <img src="img/logo3.png" alt="Company Logo" style="max-width: 150px; margin-bottom: 40px;">
+            
+            <!-- Attractive Heading -->
+            <h3 style="color: #122840; font-weight: 700; margin-bottom: 5px;">Exclusive Offer!</h3>
+            <p style="color: #666; font-size: 16px;">Register now for special pricing and priority selection</p>
+          </div>
+          
+          <!-- Simple Form -->
+          <form id="simpleRegistrationForm" class="px-3">
+            <!-- Name Field -->
+            <div class="mb-3">
+              <input type="text" class="form-control form-control-lg" id="name" placeholder="Your Name" required 
+                     style="border-radius: 8px; padding: 12px 15px; border: 1px solid #ddd;">
+            </div>
+            
+            <!-- Contact Number Field -->
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text" style="background-color: #f8f9fa; border-radius: 8px 0 0 8px; border: 1px solid #ddd;">
+                  <span style="font-weight: 500;">+91</span>
+                </span>
+                <input type="tel" class="form-control form-control-lg" id="mobile" placeholder="Contact Number" required 
+                       style="border-radius: 0 8px 8px 0; padding: 12px 15px; border: 1px solid #ddd;">
+              </div>
+            </div>
+            
+            <!-- Email Field (Optional) -->
+            <div class="mb-4">
+              <input type="email" class="form-control form-control-lg" id="email" placeholder="Email (Optional)" 
+                     style="border-radius: 8px; padding: 12px 15px; border: 1px solid #ddd;">
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-lg w-100" 
+                    style="background-color: #122840; color: white; border-radius: 8px; padding: 12px; font-weight: 600; transition: all 0.3s ease;">
+              GET INSTANT CALLBACK
+            </button>
+          </form>
+          
+          <!-- Additional Benefits -->
+          <div class="d-flex justify-content-center mt-4">
+            <div class="mx-2 text-center">
+              <i class="fas fa-phone-alt" style="color: #122840; font-size: 18px;"></i>
+              <p style="font-size: 12px; margin-top: 5px; color: #666;">Quick Response</p>
+            </div>
+            <div class="mx-2 text-center">
+              <i class="fas fa-home" style="color: #122840; font-size: 18px;"></i>
+              <p style="font-size: 12px; margin-top: 5px; color: #666;">Free Site Visit</p>
+            </div>
+            <div class="mx-2 text-center">
+              <i class="fas fa-tag" style="color: #122840; font-size: 18px;"></i>
+              <p style="font-size: 12px; margin-top: 5px; color: #666;">Best Pricing</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Footer with Contact Number -->
+        <div class="modal-footer justify-content-center border-0 bg-light py-3">
+          <a href="tel:+919987723078" class="text-decoration-none">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-phone me-2" style="color: #122840;"></i>
+              <span style="color: #122840; font-weight: bold;">+91-92251-10101</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Script to Show Popup -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create modal instance
+      var simpleModal = new bootstrap.Modal(document.getElementById('simpleRegistrationModal'));
+      
+      // Show modal after 3 seconds
+      setTimeout(function() {
+        simpleModal.show();
+      }, 3000);
+      
+      // Animate button on hover
+      const submitBtn = document.querySelector('#simpleRegistrationForm button[type="submit"]');
+      submitBtn.addEventListener('mouseover', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+      });
+      
+      submitBtn.addEventListener('mouseout', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'none';
+      });
+      
+      // Form submission
+      document.getElementById('simpleRegistrationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thank you for registering! We will call you back shortly.');
+        simpleModal.hide();
+      });
+    });
+  </script>
      
      
 
@@ -300,16 +416,16 @@
                                                 <i class="fa fa-play"></i>
                                             </a>
                                         </div>
-                                        <!-- <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> World-Class Design</h6> -->
-                                            <!-- <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
+                                        <!-- <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> World-Class Design</h6> --> -->
+                                         <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
                                         <div class="slide-brief animated">
                                             <p>All homes at Moonstone have an utilitarian plan that implements the latest contemporary design.</p>
-                                        </div> -->
+                                        </div>
 
                                         <div class="btn-wrapper animated">
-                                        <!-- <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                                        <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
                                             Enquire Now
-                                        </a> -->
+                                        </a>
                                         </div>
                                  
                                         
@@ -332,17 +448,17 @@
                             <div class="col-lg-12 align-self-center">
                                 <div class="slide-item-info">
                                     <div class="slide-item-info-inner ltn__slide-animation">
-                                        <!-- <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Rajhans Group
-                                        </h6>
+                                         <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Rajhans Group
+                                        </h6> 
                                         <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
                                         <div class="slide-brief animated">
                                             <p>Rajhans group is one of the most preferred real estate developers in Vasai. We at Rajhans group are driven by passion to create magic in the lives of scores of customers.</p>
-                                        </div> -->
+                                        </div>
                                             
                          <div class="btn-wrapper animated">
-                            <!-- <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
                                 Enquire Now
-                            </a> -->
+                            </a>
                             </div>
 
                                     </div>
@@ -360,17 +476,17 @@
                             <div class="col-lg-12 align-self-center">
                                 <div class="slide-item-info">
                                     <div class="slide-item-info-inner ltn__slide-animation">
-                                        <!-- <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Best Amenities</h6>
+                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Best Amenities</h6>
                                         <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
                                         <div class="slide-brief animated">
                                             <p>Moonstone offers you stimulating and immersive amenities that enables you to embark on a journey of higher quality living.</p>
-                                        </div> -->
+                                        </div>
 
                                             
                          <div class="btn-wrapper animated"> 
-                            <!-- <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal" style="background-color: #122840; ; border-color: #122840;">
                                 Enquire Now
-                            </a> --> -->
+                            </a> 
                             </div>
                                     </div>
                                 </div>
@@ -1295,4 +1411,3 @@ document.getElementById("contact-form").reset();
 </body>
 
 </html>
-
