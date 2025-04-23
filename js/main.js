@@ -2089,84 +2089,89 @@
   });
 })(jQuery);
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const form = document.getElementById('enquiryForm');
-
-//     form.addEventListener('submit', function (e) {
-//       e.preventDefault();
-
-//       if (!form.checkValidity()) {
-//         form.classList.add('was-validated');
-//         return;
-//       }
-
-//       const name = document.getElementById('name').value;
-//       const contact = document.getElementById('contact').value;
-//       const email = document.getElementById('email').value;
-
-//       fetch('https://script.google.com/macros/s/AKfycbyasA1TEPfAETCC63QjHwRCDw5Z-Aa1VhtN0mGvJGAddOsaKzrF4Es_SrmcIr-b3pRv/exec', {
-//         method: 'POST',
-//         mode: 'no-cors',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//           name: document.getElementById('name').value,
-//           contact: document.getElementById('contact').value,
-//           email: document.getElementById('email').value
-//         }),
-//       })
-//         .then(res => res.json())
-//         .then(response => {
-//           console.log('Success!', response);
-//           alert('Form submitted successfully!');
-//           document.getElementById('enquiryForm').reset();
-//         })
-//         .catch(err => {
-//           console.error('Error!', err.message);
-//           alert('Error submitting form.');
-//         });
-//     });
-//   });
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("enquiryForm");
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzEbGkE6CtBx3Qw6b8LuDACJbbWPoBICIbvP4EYhv0AHjrnYzidp1S9xN8TGZv7S04O/exec";
-  
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-  
-      if (!form.checkValidity()) {
-        form.classList.add("was-validated");
-        return;
-      }
-  
-      const formData = new FormData(form);
-      console.log("FormData entries:", Object.fromEntries(formData));
-  
-      fetch(scriptURL, {
-        method: "POST",
-        body: new URLSearchParams(formData),
+  const form = document.getElementById("enquiryForm");
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbzEbGkE6CtBx3Qw6b8LuDACJbbWPoBICIbvP4EYhv0AHjrnYzidp1S9xN8TGZv7S04O/exec";
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.classList.add("was-validated");
+      return;
+    }
+
+    const formData = new FormData(form);
+    console.log("FormData entries:", Object.fromEntries(formData));
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: new URLSearchParams(formData),
+    })
+      .then((response) => {
+        console.log("Form submitted successfully");
+        alert("Form Submitted Successfully");
+        const formAlert = document.getElementById("formAlert");
+        formAlert.style.display = "block";
+        setTimeout(() => {
+          formAlert.style.display = "none";
+        }, 3000);
+        form.reset();
+        form.classList.remove("was-validated");
+        const modalElement = document.getElementById("enquiryModal");
+        if (modalElement) {
+          const modalInstance = bootstrap.Modal.getInstance(modalElement);
+          if (modalInstance) modalInstance.hide();
+        }
       })
-        .then((response) => {
-          console.log("Form submitted successfully");
-          alert("Form Submitted Successfully")
-          const formAlert = document.getElementById("formAlert");
-          formAlert.style.display = "block";
-          setTimeout(() => {
-            formAlert.style.display = "none";
-          }, 3000);
-          form.reset();
-          form.classList.remove("was-validated");
-          const modalElement = document.getElementById("enquiryModal");
-          if (modalElement) {
-            const modalInstance = bootstrap.Modal.getInstance(modalElement);
-            if (modalInstance) modalInstance.hide();
-          }
-        })
-        .catch((error) => {
-          console.error("Error submitting form:", error);
-          alert("There was an error submitting your enquiry. Please try again.");
-        });
-    });
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        alert("There was an error submitting your enquiry. Please try again.");
+      });
   });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("enquiryForm1");
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbzEbGkE6CtBx3Qw6b8LuDACJbbWPoBICIbvP4EYhv0AHjrnYzidp1S9xN8TGZv7S04O/exec";
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.classList.add("was-validated");
+      return;
+    }
+
+    const formData = new FormData(form);
+    console.log("FormData entries:", Object.fromEntries(formData));
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: new URLSearchParams(formData),
+    })
+      .then((response) => {
+        console.log("Form submitted successfully");
+        alert("Form Submitted Successfully");
+        // const formAlert = document.getElementById("formAlert");
+        // formAlert.style.display = "block";
+        // setTimeout(() => {
+        //   formAlert.style.display = "none";
+        // }, 3000);
+        form.reset();
+        form.classList.remove("was-validated");
+        const modalElement = document.getElementById("enquiryModal");
+        if (modalElement) {
+          const modalInstance = bootstrap.Modal.getInstance(modalElement);
+          if (modalInstance) modalInstance.hide();
+        }
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        alert("There was an error submitting your enquiry. Please try again.");
+      });
+  });
+});
