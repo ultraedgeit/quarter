@@ -453,23 +453,23 @@
         <!-- SLIDER AREA START (slider-3) -->
         <script>
             $(document).ready(function(){
-              $('.ltn__slide-one-active').slick({
+              $('.custom-slider-active').slick({
                 autoplay: true,
-                autoplaySpeed: 3000, // Time between slides in milliseconds (5000ms = 5s)
+                autoplaySpeed: 3000,
                 arrows: true,
                 dots: true,
                 fade: true,
-                speed: 1000, // Transition speed
+                speed: 1000,
                 pauseOnHover: false,
                 pauseOnFocus: false,
-                prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
-  nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
-
+                prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"></button>',
+                nextArrow: '<button type="button" class="slick-next" aria-label="Next"></button>',
               });
             });
           </script>
-        <div class="ltn__slider-area ltn__slider-3  section-bg-2">
-            <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1">
+        </script>
+        <div class="ltn__slider-area ltn__slider-3 section-bg-2">
+            <div class="custom-slider-active slick-slide-arrow-1 slick-slide-dots-1">
                 <!-- ltn__slide-item -->
                 <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal--- ltn__slide-item-3 bg-image bg-overlay-theme-black-60"
                     data-bs-bg="img/hero-1.jpeg">
@@ -481,7 +481,7 @@
                                         <div class="slide-item-info-inner ltn__slide-animation">
                                             <div class="slide-video mb-50 d-none">
                                                 <a class="ltn__video-icon-2 ltn__video-icon-2-border"
-                                                    href="https://www.youtube.com/embed/tlThdr3O5Qo"
+                                                    href="https://www.youtube.com/embed/DaEdRP6CK3I?si=05bCwZy77L45WgME"
                                                     data-rel="lightcase:myCollection">
                                                     <i class="fa fa-play"></i>
                                                 </a>
