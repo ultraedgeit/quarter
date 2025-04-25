@@ -113,8 +113,8 @@
                                             <li><a href="#locationsection">Location</a></li>
 
                                             <li class="special-link">
-                                                <a href="#" id="enquireBtn"
-                                                    style="padding: 12px 25px; background: linear-gradient(to right, #122840, #1e3c61); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(18, 40, 64, 0.3); transition: all 0.3s ease;">Enquire
+                                                <a href="#" id="enquireBtn" data-bs-toggle="modal"
+                                                data-bs-target="#enquiryModal" style="padding: 12px 25px; background: linear-gradient(to right, #122840, #1e3c61); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(18, 40, 64, 0.3); transition: all 0.3s ease;">Enquire
                                                     Now</a>
                                             </li>
 
@@ -124,7 +124,7 @@
                                             </div>
 
                                             <!-- Popup Form -->
-                                            <div class="popup-form" id="popupForm"
+                                            <!-- <div class="popup-form" id="popupForm"
                                                 style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 35px; width: 400px; border-radius: 15px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); text-align: center; z-index: 1000; transition: all 0.4s ease;">
                                                 <button class="close-btn" id="closeBtn"
                                                     style="background: #f0f0f0; border: none; font-size: 16px; cursor: pointer; position: absolute; top: 15px; right: 15px; height: 30px; width: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">✖</button>
@@ -245,7 +245,7 @@
                                                     </div>`;
                                                     }
                                                 });
-                                            </script>
+                                            </script> -->
 
                                         </ul>
                                     </div>
@@ -404,7 +404,7 @@
                 flex-direction: column;
                 gap: 10px;
                 width: 90%;
-                max-width: 280px;
+                max-width: 210px;
             }
             
             .enq-action-button {
@@ -414,8 +414,8 @@
             }
             
             .enq-contact-panel {
-                width: 90%;
-                max-width: 320px;
+                width: 80%;
+                max-width: 220px;
             }
             
             .enq-contact-panel.active {
@@ -1014,67 +1014,71 @@
                             </div>
 
                             <!-- Enquiry Modal -->
-                            <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content" style="border-radius: 5px;">
-                                        <!-- Header with Subtle Gradient -->
-                                        <div
-                                            class="modal-header bg-gradient-primary text-white d-flex justify-content-between align-items-center py-2">
-                                            <div class="logo-container">
-                                                <img src="img/rajhanswhite.png" alt="Company Logo" width="18%"
-                                                    height="auto" style="border-radius: 12px; padding: 10px;">
-                                                <img src="img/logo1.png" alt="Company Logo" height="60">
-                                            </div>
-                                            <button type="button" class="btn-close btn-close-white"
-                                                data-bs-dismiss="modal" style="margin: 15px"
-                                                aria-label="Close"></button>
-                                        </div>
-
-                                        <!-- Body with Clean Layout -->
-                                        <div class="modal-body p-4">
-                                            <div class="mb-4">
-                                                <h4 class="fw-normal">Request Property Information</h4>
-                                                <p class="text-muted small">Complete the form below and Our team will shortly contact you.</p>
-                                            </div>
-
-                                            <form id="enquiryForm" class="needs-validation" novalidate>
-                                                <div class="row g-3">
-                                                  <div class="col-md-6">
-                                                    <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
-                                                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required style="height: 50px; border-radius:10px" />
-                                                    <div class="invalid-feedback">Please enter your name.</div>
-                                                  </div>
-                                                  <div class="col-md-6">
-                                                    <label for="contact" class="form-label">Contact Number <span class="text-danger">*</span></label>
-                                                    <input type="tel" id="contact" name="contact" class="form-control" placeholder="Enter your phone number" required style="height: 50px; border-radius:10px" />
-                                                    <div class="invalid-feedback">Please enter a valid phone number.</div>
-                                                  </div>
-                                                  <div class="col-md-12">
-                                                    <label for="email" class="form-label">Email Address <small class="text-muted">(Optional)</small></label>
-                                                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" style="height: 50px; border-radius:10px" />
-                                                  </div>
-                                                </div>
-                                                <div class="mt-4 pt-2">
-                                                  <button type="submit" class="btn btn-primary px-4" style="height: 50px; width: 100%; border-radius:10px">Submit Enquiry</button>
-                                                </div>
-                                                <div id="formAlert" class="alert alert-success mt-3" style="display: none;">Form submitted successfully!</div>
-                                              </form>
-                                        </div>
-
-                                        <!-- Footer -->
-                                        <div class="modal-footer bg-light py-2">
-                                            <p class="mb-0 text-muted small">
-                                                <i class="bi bi-shield-lock me-1"></i>
-                                                Your information is protected by our privacy policy
-                                            </p>
-                                        </div>
+                            <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" style="max-width: 320px; margin: auto;">
+                                  <div class="modal-content" style="border-radius: 18px;">
+                                    
+                                    <!-- Header -->
+                                    <div class="modal-header text-white d-flex justify-content-between align-items-center"
+                                         style="background: linear-gradient(90deg, #00204a, #010b11); border-top-left-radius: 18px; border-top-right-radius: 18px; padding: 8px 12px;">
+                                      <div class="logo-container d-flex align-items-center gap-2">
+                                        <img src="img/rajhanswhite.png" alt="Company Logo" width="14%" style="border-radius: 8px;">
+                                        <img src="img/logo1.png" alt="Company Logo" height="30">
+                                      </div>
+                                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                                              style="margin: 0;"></button>
                                     </div>
+                              
+                                    <!-- Body -->
+                                    
+                                    <div class="modal-body px-3 py-3 text-center" style="font-size: 13px;">
+                                      <h6 class="fw-normal mb-2">Request Info</h6>
+                                      <p class="text-muted small mb-3">Fill out the form & we'll reach out shortly.</p>
+                              
+                                      <form id="enquiryForm" class="needs-validation" novalidate>
+                                        <div class="mb-2 text-start">
+                                          <label for="name" class="form-label mb-1">Full Name <span class="text-danger">*</span></label>
+                                          <input type="text" id="name" name="name" class="form-control"
+                                                 placeholder="Name" required
+                                                 style="height: 36px; font-size: 12px; border-radius: 10px;" />
+                                          <div class="invalid-feedback">Enter your name.</div>
+                                        </div>
+                                        <div class="mb-2 text-start">
+                                          <label for="contact" class="form-label mb-1">Contact <span class="text-danger">*</span></label>
+                                          <input type="tel" id="contact" name="contact" class="form-control"
+                                                 placeholder="Phone number" required
+                                                 style="height: 36px; font-size: 12px; border-radius: 10px;" />
+                                          <div class="invalid-feedback">Enter a valid number.</div>
+                                        </div>
+                                        <div class="mb-3 text-start">
+                                          <label for="email" class="form-label mb-1">Email <small class="text-muted">(Optional)</small></label>
+                                          <input type="email" id="email" name="email" class="form-control"
+                                                 placeholder="Email"
+                                                 style="height: 36px; font-size: 12px; border-radius: 10px;" />
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100"
+                                                style="height: 38px; font-size: 13px; border-radius: 10px;">Submit</button>
+                                        <div id="formAlert" class="alert alert-success mt-2 py-1" style="display: none; font-size: 12px;">
+                                          Form submitted successfully!
+                                        </div>
+                                      </form>
+                                    </div>
+                              
+                                    <!-- Footer -->
+                                    <div class="modal-footer bg-light py-2" style="border-bottom-left-radius: 18px; border-bottom-right-radius: 18px;">
+                                      <p class="mb-0 text-muted small" style="font-size: 11px;">
+                                        <i class="bi bi-shield-lock me-1"></i>
+                                        Your info is protected by our privacy policy
+                                      </p>
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
-                            <div id="formAlert" class="alert alert-success mt-3" style="display: none;">
+                              </div>
+                              
+                              
+                            <!-- <div id="formAlert" class="alert alert-success mt-3" style="display: none;">
                                 Your enquiry has been submitted successfully! Our team will shortly contact you.
-                            </div>
+                            </div> -->
 
 
                             <!-- Bootstrap CSS & JS (Ensure you include Bootstrap in your project) -->
