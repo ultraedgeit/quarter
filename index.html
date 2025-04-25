@@ -451,6 +451,27 @@
         <div class="ltn__utilize-overlay"></div>
 
         <!-- SLIDER AREA START (slider-3) -->
+         <style>
+            .slick-prev,
+.slick-next {
+    background: none !important;
+    border: none !important;
+    font-size: 0 !important;
+    color: transparent !important;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    cursor: pointer;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    display: none !important;
+}
+         </style>
         <script>
             $(document).ready(function(){
               $('.custom-slider-active').slick({
@@ -652,10 +673,89 @@
 
                 <p style="font-size: 14px; margin: 0 0 20px 0; color: #555;">Offer Valid For Limited Time Only</p>
 
-                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal"
-                    style="background-color: #122840; ; border-color: #122840;">
-                    Enquire Now
-                </a>
+<!-- Shaky button -->
+<style>
+.button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      10% { transform: translate(calc(-1px * var(--shake-x)), calc(-1px * var(--shake-y))) rotate(calc(-0.5deg * var(--shake-r))); }
+      20% { transform: translate(calc(1px * var(--shake-x)), 0) rotate(calc(0.5deg * var(--shake-r))); }
+      30% { transform: translate(calc(-1px * var(--shake-x)), calc(1px * var(--shake-y))) rotate(0deg); }
+      40% { transform: translate(calc(1px * var(--shake-x)), calc(-0.5px * var(--shake-y))) rotate(calc(0.5deg * var(--shake-r))); }
+      50% { transform: translate(calc(-1px * var(--shake-x)), calc(0.5px * var(--shake-y))) rotate(calc(-0.5deg * var(--shake-r))); }
+      60% { transform: translate(calc(1px * var(--shake-x)), calc(1px * var(--shake-y))) rotate(0deg); }
+      70% { transform: translate(calc(-1px * var(--shake-x)), calc(-0.5px * var(--shake-y))) rotate(calc(0.5deg * var(--shake-r))); }
+      80% { transform: translate(calc(1px * var(--shake-x)), calc(0.5px * var(--shake-y))) rotate(calc(-0.5deg * var(--shake-r))); }
+      90% { transform: translate(calc(-1px * var(--shake-x)), calc(1px * var(--shake-y))) rotate(0deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    .theme-btn-1 {
+      display: inline-block;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+      animation: shake calc(1s + (var(--shake-speed) * 0.5s)) infinite;
+    }
+
+    .theme-btn-1:hover {
+      animation: none;
+      /* transform: scale(1.05); */
+    }
+
+    .btn-effect-1 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-effect-1:after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgb(255, 255, 255);
+      transition: width 0.3s;
+    }
+
+    .btn-effect-1:hover:after {
+      width: 100%;
+    }
+
+    /* Unique button variations */
+    .button-1 {
+      --shake-x: 2;
+      --shake-y: 1;
+      --shake-r: 2;
+      --shake-speed: 1;
+    }
+
+    .button-2 {
+      --shake-x: 1.5;
+      --shake-y: 2;
+      --shake-r: 1;
+      --shake-speed: 1.2;
+    }
+</style>
+
+                <div class="button-container">
+                    <a href="#" class="theme-btn-1 btn btn-effect-1 button-2" data-bs-toggle="modal"
+                                    data-bs-target="#enquiryModal"
+                                    style="background-color: #122840; ; border-color: #122840;">
+                                    Enquire Now
+                                </a>
+                </div>
                 <p style="font-size: 12px; margin-top: 20px; color: #777;">Maharera : P99000018357</p>
             </div>
         </div>
@@ -717,7 +817,7 @@
 
 
                             <div class="btn-wrapper animated">
-                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal"
+                                <a href="#" class="theme-btn-1 btn btn-effect-1 button-1" data-bs-toggle="modal"
                                     data-bs-target="#enquiryModal"
                                     style="background-color: #122840; ; border-color: #122840;">
                                     Enquire Now
@@ -1142,7 +1242,7 @@
                                 </ul>
 
                                 <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal"
+                                    <a href="#" class="theme-btn-1 btn btn-effect-1 button-2" data-bs-toggle="modal"
                                         data-bs-target="#enquiryModal"
                                         style="background-color: #122840; border-color: #122840; display: block; text-align: center; padding: 12px; font-weight: 600; border-radius: 6px; transition: all 0.3s ease;">
                                         Know More
@@ -1181,7 +1281,7 @@
                                 </ul>
 
                                 <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal"
+                                    <a href="#" class="theme-btn-1 btn btn-effect-1 button-2" data-bs-toggle="modal"
                                         data-bs-target="#enquiryModal"
                                         style="background-color: #122840; border-color: #122840; display: block; text-align: center; padding: 12px; font-weight: 600; border-radius: 6px; transition: all 0.3s ease;">
                                         Know More
@@ -1221,7 +1321,7 @@
                                 </ul>
 
                                 <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal"
+                                    <a href="#" class="theme-btn-1 btn btn-effect-1 button-2" data-bs-toggle="modal"
                                         data-bs-target="#enquiryModal"
                                         style="background-color: #122840; border-color: #122840; display: block; text-align: center; padding: 12px; font-weight: 600; border-radius: 6px; transition: all 0.3s ease;">
                                         Know more
