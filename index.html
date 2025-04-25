@@ -19,7 +19,13 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,7 +125,7 @@
                                                     style="margin-top: 0; margin-bottom: 25px; color: #122840; font-size: 24px;">
                                                     Get In Touch</h2>
                                                 <p style="margin-bottom: 30px; color: #666; font-size: 15px;">Complete
-                                                    the form below and we'll contact you shortly</p>
+                                                    the form below and Our team will shortly contact you.</p>
 
                                                 <form>
                                                     <div style="margin-bottom: 20px; text-align: left;">
@@ -227,7 +233,7 @@
                                                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                         </svg>
                                                         <h3 style="color: #122840; margin-top: 15px;">Thank You!</h3>
-                                                        <p style="color: #666; margin-bottom: 0;">Your enquiry has been submitted successfully. We'll contact you shortly.</p>
+                                                        <p style="color: #666; margin-bottom: 0;">Your enquiry has been submitted successfully. Our team will shortly contact you.</p>
                                                     </div>`;
                                                     }
                                                 });
@@ -436,6 +442,23 @@
         <div class="ltn__utilize-overlay"></div>
 
         <!-- SLIDER AREA START (slider-3) -->
+        <script>
+            $(document).ready(function(){
+              $('.ltn__slide-one-active').slick({
+                autoplay: true,
+                autoplaySpeed: 3000, // Time between slides in milliseconds (5000ms = 5s)
+                arrows: true,
+                dots: true,
+                fade: true,
+                speed: 1000, // Transition speed
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+  nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+
+              });
+            });
+          </script>
         <div class="ltn__slider-area ltn__slider-3  section-bg-2">
             <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1">
                 <!-- ltn__slide-item -->
@@ -714,8 +737,7 @@
                                         <div class="modal-body p-4">
                                             <div class="mb-4">
                                                 <h4 class="fw-normal">Request Property Information</h4>
-                                                <p class="text-muted small">Complete the form below and one of our
-                                                    agents will contact you shortly</p>
+                                                <p class="text-muted small">Complete the form below and Our team will shortly contact you.</p>
                                             </div>
 
                                             <form id="enquiryForm" class="needs-validation" novalidate>
@@ -753,7 +775,7 @@
                                 </div>
                             </div>
                             <div id="formAlert" class="alert alert-success mt-3" style="display: none;">
-                                Your enquiry has been submitted successfully! We'll contact you shortly.
+                                Your enquiry has been submitted successfully! Our team will shortly contact you.
                             </div>
 
 
@@ -1505,7 +1527,7 @@
                     <div class="row">
                         <div class="col-md-6 col-12">
                             <div class="ltn__copyright-design clearfix">
-                                <p>All Rights Reserved @ Ultra Edge IT Solutions <span class="current-year"></span></p>
+                                <p>All Rights Reserved @ 13 Ignite <span class="current-year"></span></p>
                             </div>
                         </div>
 
@@ -1561,6 +1583,7 @@
 
         <!-- All JS Plugins -->
         <script src="js/plugins.js"></script>
+        <script src="js/slidecor.js"></script>
         <!-- Main JS -->
         <script src="js/main.js"></script>
 
