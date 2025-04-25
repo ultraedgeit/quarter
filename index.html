@@ -48,7 +48,6 @@
 
     <!-- Body main wrapper start -->
     <div class="body-wrapper">
-
         <!-- HEADER AREA START (header-5) -->
         <header
             class="ltn__header-area ltn__header-5 ltn__header-logo-and-mobile-menu-in-mobile ltn__header-logo-and-mobile-menu ltn__header-transparent gradient-color-4---">
@@ -277,6 +276,165 @@
         </header>
         <!-- HEADER AREA END -->
 
+        <style>
+            .enq-content-wrapper {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            font-size: 1.5rem;
+        }
+        
+        .enq-floating-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .enq-action-button {
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 150px;
+        }
+        
+        .enq-call-button {
+            background: linear-gradient(45deg, #00796b, #009688);
+            border: none;
+            color: white;
+        }
+        
+        .enq-call-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 150, 136, 0.4);
+            color: white;
+        }
+        
+        .enq-form-button {
+            background: linear-gradient(45deg, #0e0113, #060024);
+            border: none;
+            color: white;
+        }
+        
+        .enq-form-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(156, 39, 176, 0.4);
+            color: white;
+        }
+        
+        .enq-contact-panel {
+            position: fixed;
+            bottom: -400px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 999;
+        }
+        
+        .enq-contact-panel.active {
+            bottom: 90px;
+        }
+        
+        .enq-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .enq-dismiss-btn {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: #6c757d;
+        }
+        
+        .enq-attention-effect {
+            animation: enq-pulse-effect 1.5s infinite;
+        }
+        
+        @keyframes enq-pulse-effect {
+            0% {
+                transform: scale(1) translateX(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05) translateX(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1) translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Submit button styling */
+        .enq-submit-btn {
+            background: linear-gradient(45deg, #000000, #000a2a);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .enq-submit-btn:hover {
+            box-shadow: 0 4px 8px rgba(156, 39, 176, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 576px) {
+            .enq-floating-container {
+                flex-direction: column;
+                gap: 10px;
+                width: 90%;
+                max-width: 280px;
+            }
+            
+            .enq-action-button {
+                width: 100%;
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .enq-contact-panel {
+                width: 90%;
+                max-width: 320px;
+            }
+            
+            .enq-contact-panel.active {
+                bottom: 150px;
+            }
+        }
+        </style>
+
+        <div class="enq-floating-container">
+            <a href="tel:+917769900500" class="btn enq-action-button enq-call-button enq-attention-effect">
+                <i class="fas fa-phone-alt"></i> 
+                Call Now
+            </a>
+            <button id="formButton" class="btn enq-action-button enq-form-button">
+                <i class="fas fa-envelope"></i>
+                <a data-bs-toggle="modal"
+                data-bs-target="#enquiryModal">Book Site Visit</a>
+            </button>
+        </div>
 
         <!-- Utilize Mobile Menu Start -->
         <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
@@ -757,8 +915,39 @@
                                 </a>
                 </div>
                 <p style="font-size: 12px; margin-top: 20px; color: #777;">Maharera : P99000018357</p>
+                <form id="enquiryForm1" class="px-3 needs-validation" novalidate>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name"
+                            placeholder="Your Name" required
+                            style="border-radius: 8px; padding: 12px 15px; border: 1px solid #ddd;">
+                    </div>
+        
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text"
+                                style="background-color: #f8f9fa; border-radius: 8px 0 0 8px; border: 1px solid #ddd;">
+                                <span style="font-weight: 500;">+91</span>
+                            </span>
+                            <input type="tel" class="form-control form-control-lg" id="contact" name="contact"
+                                placeholder="Contact Number" required
+                                style="border-radius: 0 8px 8px 0; padding: 12px 15px; border: 1px solid #ddd;">
+                        </div>
+                    </div>
+        
+                    <div class="mb-4">
+                        <input type="email" class="form-control form-control-lg" id="email" name="email"
+                            placeholder="Email (Optional)"
+                            style="border-radius: 8px; padding: 12px 15px; border: 1px solid #ddd;">
+                    </div>
+                    <button type="submit" class="btn btn-lg w-100"
+                        style="background-color: #122840; color: white; border-radius: 8px; padding: 12px; font-weight: 600; transition: all 0.3s ease;">
+                        GET INSTANT CALLBACK
+                    </button>
+                </form>
             </div>
         </div>
+        
 
         <!-- Best PARTS END-->
 
@@ -1519,7 +1708,7 @@
                     if (!hasBeenOpened) {
                         showChat();
                     }
-                }, 3000);
+                }, 7000);
 
                 closeBtn.addEventListener("click", hideChat);
 
