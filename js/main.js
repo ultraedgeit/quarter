@@ -2111,14 +2111,26 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((response) => {
         console.log("Form submitted successfully");
+        // Optional: Show alert or hide modal before redirect
         alert("Form Submitted Successfully");
-        const formAlert = document.getElementById("formAlert");
-        formAlert.style.display = "block";
+        
+        // OPTIONAL: Short delay to allow user to see the alert
         setTimeout(() => {
-          formAlert.style.display = "none";
-        }, 3000);
+          window.location.href = "thankyou.html"; // ✅ Redirect here
+        }, 500); // or 0 if no delay needed
+
+        // Optional: If not redirecting, show/hide modal etc.
+        const formAlert = document.getElementById("formAlert");
+        if (formAlert) {
+          formAlert.style.display = "block";
+          setTimeout(() => {
+            formAlert.style.display = "none";
+          }, 3000);
+        }
+
         form.reset();
         form.classList.remove("was-validated");
+
         const modalElement = document.getElementById("enquiryModal");
         if (modalElement) {
           const modalInstance = bootstrap.Modal.getInstance(modalElement);
@@ -2156,13 +2168,11 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => {
         console.log("Form submitted successfully");
         alert("Form Submitted Successfully");
-        // const formAlert = document.getElementById("formAlert");
-        // formAlert.style.display = "block";
-        // setTimeout(() => {
-        //   formAlert.style.display = "none";
-        // }, 3000);
         form.reset();
         form.classList.remove("was-validated");
+        setTimeout(() => {
+          window.location.href = "thankyou.html"; // ✅ Redirect here
+        }, 500); 
         const modalElement = document.getElementById("enquiryModal");
         if (modalElement) {
           const modalInstance = bootstrap.Modal.getInstance(modalElement);
