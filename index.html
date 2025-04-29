@@ -19,7 +19,22 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Slick Slider CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+
+<!-- Slick Slider JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +48,6 @@
 
     <!-- Body main wrapper start -->
     <div class="body-wrapper">
-
         <!-- HEADER AREA START (header-5) -->
         <header
             class="ltn__header-area ltn__header-5 ltn__header-logo-and-mobile-menu-in-mobile ltn__header-logo-and-mobile-menu ltn__header-transparent gradient-color-4---">
@@ -99,8 +113,8 @@
                                             <li><a href="#locationsection">Location</a></li>
 
                                             <li class="special-link">
-                                                <a href="#" id="enquireBtn"
-                                                    style="padding: 12px 25px; background: linear-gradient(to right, #122840, #1e3c61); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(18, 40, 64, 0.3); transition: all 0.3s ease;">Enquire
+                                                <a href="#" id="enquireBtn" data-bs-toggle="modal"
+                                                data-bs-target="#enquiryModal" style="padding: 12px 25px; background: linear-gradient(to right, #122840, #1e3c61); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(18, 40, 64, 0.3); transition: all 0.3s ease;">Enquire
                                                     Now</a>
                                             </li>
 
@@ -110,7 +124,7 @@
                                             </div>
 
                                             <!-- Popup Form -->
-                                            <div class="popup-form" id="popupForm"
+                                            <!-- <div class="popup-form" id="popupForm"
                                                 style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 35px; width: 400px; border-radius: 15px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); text-align: center; z-index: 1000; transition: all 0.4s ease;">
                                                 <button class="close-btn" id="closeBtn"
                                                     style="background: #f0f0f0; border: none; font-size: 16px; cursor: pointer; position: absolute; top: 15px; right: 15px; height: 30px; width: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">✖</button>
@@ -119,7 +133,7 @@
                                                     style="margin-top: 0; margin-bottom: 25px; color: #122840; font-size: 24px;">
                                                     Get In Touch</h2>
                                                 <p style="margin-bottom: 30px; color: #666; font-size: 15px;">Complete
-                                                    the form below and we'll contact you shortly</p>
+                                                    the form below and Our team will shortly contact you.</p>
 
                                                 <form>
                                                     <div style="margin-bottom: 20px; text-align: left;">
@@ -227,11 +241,11 @@
                                                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                                                         </svg>
                                                         <h3 style="color: #122840; margin-top: 15px;">Thank You!</h3>
-                                                        <p style="color: #666; margin-bottom: 0;">Your enquiry has been submitted successfully. We'll contact you shortly.</p>
+                                                        <p style="color: #666; margin-bottom: 0;">Your enquiry has been submitted successfully. Our team will shortly contact you.</p>
                                                     </div>`;
                                                     }
                                                 });
-                                            </script>
+                                            </script> -->
 
                                         </ul>
                                     </div>
@@ -262,6 +276,165 @@
         </header>
         <!-- HEADER AREA END -->
 
+        <style>
+            .enq-content-wrapper {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            font-size: 1.5rem;
+        }
+        
+        .enq-floating-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .enq-action-button {
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 150px;
+        }
+        
+        .enq-call-button {
+            background: linear-gradient(45deg, #00796b, #009688);
+            border: none;
+            color: white;
+        }
+        
+        .enq-call-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 150, 136, 0.4);
+            color: white;
+        }
+        
+        .enq-form-button {
+            background: linear-gradient(45deg, #0e0113, #060024);
+            border: none;
+            color: white;
+        }
+        
+        .enq-form-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(156, 39, 176, 0.4);
+            color: white;
+        }
+        
+        .enq-contact-panel {
+            position: fixed;
+            bottom: -400px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 999;
+        }
+        
+        .enq-contact-panel.active {
+            bottom: 90px;
+        }
+        
+        .enq-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .enq-dismiss-btn {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: #6c757d;
+        }
+        
+        .enq-attention-effect {
+            animation: enq-pulse-effect 1.5s infinite;
+        }
+        
+        @keyframes enq-pulse-effect {
+            0% {
+                transform: scale(1) translateX(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05) translateX(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1) translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Submit button styling */
+        .enq-submit-btn {
+            background: linear-gradient(45deg, #000000, #000a2a);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .enq-submit-btn:hover {
+            box-shadow: 0 4px 8px rgba(156, 39, 176, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 576px) {
+            .enq-floating-container {
+                flex-direction: column;
+                gap: 10px;
+                width: 90%;
+                max-width: 210px;
+            }
+            
+            .enq-action-button {
+                width: 100%;
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .enq-contact-panel {
+                width: 80%;
+                max-width: 220px;
+            }
+            
+            .enq-contact-panel.active {
+                bottom: 150px;
+            }
+        }
+        </style>
+
+        <div class="enq-floating-container">
+            <a href="tel:+917769900500" class="btn enq-action-button enq-call-button enq-attention-effect">
+                <i class="fas fa-phone-alt"></i> 
+                Call Now
+            </a>
+            <button id="formButton" class="btn enq-action-button enq-form-button">
+                <i class="fas fa-envelope"></i>
+                <a data-bs-toggle="modal"
+                data-bs-target="#enquiryModal">Book Site Visit</a>
+            </button>
+        </div>
 
         <!-- Utilize Mobile Menu Start -->
         <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
@@ -407,7 +580,7 @@
                 // Show modal after 3 seconds
                 setTimeout(function () {
                     simpleModal.show();
-                }, 3000);
+                }, 8000);
 
                 // Animate button on hover
                 const submitBtn = document.querySelector('#simpleRegistrationForm button[type="submit"]');
@@ -436,8 +609,46 @@
         <div class="ltn__utilize-overlay"></div>
 
         <!-- SLIDER AREA START (slider-3) -->
-        <div class="ltn__slider-area ltn__slider-3  section-bg-2">
-            <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1">
+         <style>
+            .slick-prev,
+.slick-next {
+    background: none !important;
+    border: none !important;
+    font-size: 0 !important;
+    color: transparent !important;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    cursor: pointer;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    display: none !important;
+}
+         </style>
+        <script>
+            $(document).ready(function(){
+              $('.custom-slider-active').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+                dots: true,
+                fade: true,
+                speed: 1000,
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"></button>',
+                nextArrow: '<button type="button" class="slick-next" aria-label="Next"></button>',
+              });
+            });
+          </script>
+        </script>
+        <div class="ltn__slider-area ltn__slider-3 section-bg-2">
+            <div class="custom-slider-active slick-slide-arrow-1 slick-slide-dots-1">
                 <!-- ltn__slide-item -->
                 <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal--- ltn__slide-item-3 bg-image bg-overlay-theme-black-60"
                     data-bs-bg="img/hero-1.jpeg">
@@ -449,7 +660,7 @@
                                         <div class="slide-item-info-inner ltn__slide-animation">
                                             <div class="slide-video mb-50 d-none">
                                                 <a class="ltn__video-icon-2 ltn__video-icon-2-border"
-                                                    href="https://www.youtube.com/embed/tlThdr3O5Qo"
+                                                    href="https://www.youtube.com/embed/DaEdRP6CK3I?si=05bCwZy77L45WgME"
                                                     data-rel="lightcase:myCollection">
                                                     <i class="fa fa-play"></i>
                                                 </a>
@@ -620,13 +831,123 @@
 
                 <p style="font-size: 14px; margin: 0 0 20px 0; color: #555;">Offer Valid For Limited Time Only</p>
 
-                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#enquiryModal"
-                    style="background-color: #122840; ; border-color: #122840;">
-                    Enquire Now
-                </a>
+<!-- Shaky button -->
+<style>
+.button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      10% { transform: translate(calc(-1px * var(--shake-x)), calc(-1px * var(--shake-y))) rotate(calc(-0.5deg * var(--shake-r))); }
+      20% { transform: translate(calc(1px * var(--shake-x)), 0) rotate(calc(0.5deg * var(--shake-r))); }
+      30% { transform: translate(calc(-1px * var(--shake-x)), calc(1px * var(--shake-y))) rotate(0deg); }
+      40% { transform: translate(calc(1px * var(--shake-x)), calc(-0.5px * var(--shake-y))) rotate(calc(0.5deg * var(--shake-r))); }
+      50% { transform: translate(calc(-1px * var(--shake-x)), calc(0.5px * var(--shake-y))) rotate(calc(-0.5deg * var(--shake-r))); }
+      60% { transform: translate(calc(1px * var(--shake-x)), calc(1px * var(--shake-y))) rotate(0deg); }
+      70% { transform: translate(calc(-1px * var(--shake-x)), calc(-0.5px * var(--shake-y))) rotate(calc(0.5deg * var(--shake-r))); }
+      80% { transform: translate(calc(1px * var(--shake-x)), calc(0.5px * var(--shake-y))) rotate(calc(-0.5deg * var(--shake-r))); }
+      90% { transform: translate(calc(-1px * var(--shake-x)), calc(1px * var(--shake-y))) rotate(0deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    .theme-btn-1 {
+      display: inline-block;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+      animation: shake calc(1s + (var(--shake-speed) * 0.5s)) infinite;
+    }
+
+    .theme-btn-1:hover {
+      animation: none;
+      /* transform: scale(1.05); */
+    }
+
+    .btn-effect-1 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-effect-1:after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgb(255, 255, 255);
+      transition: width 0.3s;
+    }
+
+    .btn-effect-1:hover:after {
+      width: 100%;
+    }
+
+    /* Unique button variations */
+    .button-1 {
+      --shake-x: 2;
+      --shake-y: 1;
+      --shake-r: 2;
+      --shake-speed: 1;
+    }
+
+    .button-2 {
+      --shake-x: 1.5;
+      --shake-y: 2;
+      --shake-r: 1;
+      --shake-speed: 1.2;
+    }
+</style>
+
+                <div class="button-container">
+                    <a href="#" class="theme-btn-1 btn btn-effect-1 button-2" data-bs-toggle="modal"
+                                    data-bs-target="#enquiryModal"
+                                    style="background-color: #122840; ; border-color: #122840;">
+                                    Enquire Now
+                                </a>
+                </div>
                 <p style="font-size: 12px; margin-top: 20px; color: #777;">Maharera : P99000018357</p>
+                <form id="enquiryForm1" class="px-3 needs-validation" novalidate>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg" id="name" name="name"
+                            placeholder="Your Name" required
+                            style="border-radius: 8px; padding: 12px 15px; border: 1px solid #ddd;">
+                    </div>
+        
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text"
+                                style="background-color: #f8f9fa; border-radius: 8px 0 0 8px; border: 1px solid #ddd;">
+                                <span style="font-weight: 500;">+91</span>
+                            </span>
+                            <input type="tel" class="form-control form-control-lg" id="contact" name="contact"
+                                placeholder="Contact Number" required
+                                style="border-radius: 0 8px 8px 0; padding: 12px 15px; border: 1px solid #ddd;">
+                        </div>
+                    </div>
+        
+                    <div class="mb-4">
+                        <input type="email" class="form-control form-control-lg" id="email" name="email"
+                            placeholder="Email (Optional)"
+                            style="border-radius: 8px; padding: 12px 15px; border: 1px solid #ddd;">
+                    </div>
+                    <button type="submit" class="btn btn-lg w-100"
+                        style="background-color: #122840; color: white; border-radius: 8px; padding: 12px; font-weight: 600; transition: all 0.3s ease;">
+                        GET INSTANT CALLBACK
+                    </button>
+                </form>
             </div>
         </div>
+        
 
         <!-- Best PARTS END-->
 
@@ -685,7 +1006,7 @@
 
 
                             <div class="btn-wrapper animated">
-                                <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal"
+                                <a href="#" class="theme-btn-1 btn btn-effect-1 button-1" data-bs-toggle="modal"
                                     data-bs-target="#enquiryModal"
                                     style="background-color: #122840; ; border-color: #122840;">
                                     Enquire Now
@@ -693,81 +1014,71 @@
                             </div>
 
                             <!-- Enquiry Modal -->
-                            <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content" style="border-radius: 5px;">
-                                        <!-- Header with Subtle Gradient -->
-                                        <div
-                                            class="modal-header bg-gradient-primary text-white d-flex justify-content-between align-items-center py-2">
-                                            <div class="logo-container">
-                                                <img src="img/rajhanswhite.png" alt="Company Logo" width="18%"
-                                                    height="auto" style="border-radius: 12px; padding: 10px;">
-                                                <img src="img/logo1.png" alt="Company Logo" height="60">
-                                            </div>
-                                            <button type="button" class="btn-close btn-close-white"
-                                                data-bs-dismiss="modal" style="margin: 15px"
-                                                aria-label="Close"></button>
-                                        </div>
-
-                                        <!-- Body with Clean Layout -->
-                                        <div class="modal-body p-4">
-                                            <div class="mb-4">
-                                                <h4 class="fw-normal">Request Property Information</h4>
-                                                <p class="text-muted small">Complete the form below and one of our
-                                                    agents will contact you shortly</p>
-                                            </div>
-
-                                            <form action="thankyou.html"id="enquiryForm" class="needs-validation" novalidate>
-                                                <div class="row g-3">
-                                                    <div class="col-md-6">
-                                                        <label for="name" class="form-label">Full Name <span
-                                                                class="text-danger">*</span></label>
-                                                        <input type="text" id="name" name="name" class="form-control"
-                                                            placeholder="Enter your name" required
-                                                            style="height: 50px; border-radius:10px" />
-                                                        <div class="invalid-feedback">Please enter your name.</div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="contact" class="form-label">Contact Number <span
-                                                                class="text-danger">*</span></label>
-                                                        <input type="tel" id="contact" name="contact"
-                                                            class="form-control" placeholder="Enter your phone number"
-                                                            required style="height: 50px; border-radius:10px" />
-                                                        <div class="invalid-feedback">Please enter a valid phone number.
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <label for="email" class="form-label">Email Address <small
-                                                                class="text-muted">(Optional)</small></label>
-                                                        <input type="email" id="email" name="email" class="form-control"
-                                                            placeholder="Enter your email"
-                                                            style="height: 50px; border-radius:10px" />
-                                                    </div>
-                                                </div>
-                                                <div class="mt-4 pt-2">
-                                                    <button type="submit" class="btn btn-primary px-4"
-                                                        style="height: 50px; width: 100%; border-radius:10px">Submit
-                                                        Enquiry</button>
-                                                </div>
-                                                <div id="formAlert" class="alert alert-success mt-3"
-                                                    style="display: none;">Form submitted successfully!</div>
-                                            </form>
-                                        </div>
-
-                                        <!-- Footer -->
-                                        <div class="modal-footer bg-light py-2">
-                                            <p class="mb-0 text-muted small">
-                                                <i class="bi bi-shield-lock me-1"></i>
-                                                Your information is protected by our privacy policy
-                                            </p>
-                                        </div>
+                            <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" style="max-width: 320px; margin: auto;">
+                                  <div class="modal-content" style="border-radius: 18px;">
+                                    
+                                    <!-- Header -->
+                                    <div class="modal-header text-white d-flex justify-content-between align-items-center"
+                                         style="background: linear-gradient(90deg, #00204a, #010b11); border-top-left-radius: 18px; border-top-right-radius: 18px; padding: 8px 12px;">
+                                      <div class="logo-container d-flex align-items-center gap-2">
+                                        <img src="img/rajhanswhite.png" alt="Company Logo" width="14%" style="border-radius: 8px;">
+                                        <img src="img/logo1.png" alt="Company Logo" height="30">
+                                      </div>
+                                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                                              style="margin: 0;"></button>
                                     </div>
+                              
+                                    <!-- Body -->
+                                    
+                                    <div class="modal-body px-3 py-3 text-center" style="font-size: 13px;">
+                                      <h6 class="fw-normal mb-2">Request Info</h6>
+                                      <p class="text-muted small mb-3">Fill out the form & we'll reach out shortly.</p>
+                              
+                                      <form id="enquiryForm" class="needs-validation" novalidate>
+                                        <div class="mb-2 text-start">
+                                          <label for="name" class="form-label mb-1">Full Name <span class="text-danger">*</span></label>
+                                          <input type="text" id="name" name="name" class="form-control"
+                                                 placeholder="Name" required
+                                                 style="height: 36px; font-size: 12px; border-radius: 10px;" />
+                                          <div class="invalid-feedback">Enter your name.</div>
+                                        </div>
+                                        <div class="mb-2 text-start">
+                                          <label for="contact" class="form-label mb-1">Contact <span class="text-danger">*</span></label>
+                                          <input type="tel" id="contact" name="contact" class="form-control"
+                                                 placeholder="Phone number" required
+                                                 style="height: 36px; font-size: 12px; border-radius: 10px;" />
+                                          <div class="invalid-feedback">Enter a valid number.</div>
+                                        </div>
+                                        <div class="mb-3 text-start">
+                                          <label for="email" class="form-label mb-1">Email <small class="text-muted">(Optional)</small></label>
+                                          <input type="email" id="email" name="email" class="form-control"
+                                                 placeholder="Email"
+                                                 style="height: 36px; font-size: 12px; border-radius: 10px;" />
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100"
+                                                style="height: 38px; font-size: 13px; border-radius: 10px;">Submit</button>
+                                        <div id="formAlert" class="alert alert-success mt-2 py-1" style="display: none; font-size: 12px;">
+                                          Form submitted successfully!
+                                        </div>
+                                      </form>
+                                    </div>
+                              
+                                    <!-- Footer -->
+                                    <div class="modal-footer bg-light py-2" style="border-bottom-left-radius: 18px; border-bottom-right-radius: 18px;">
+                                      <p class="mb-0 text-muted small" style="font-size: 11px;">
+                                        <i class="bi bi-shield-lock me-1"></i>
+                                        Your info is protected by our privacy policy
+                                      </p>
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
-                            <div id="formAlert" class="alert alert-success mt-3" style="display: none;">
-                                Your enquiry has been submitted successfully! We'll contact you shortly.
-                            </div>
+                              </div>
+                              
+                              
+                            <!-- <div id="formAlert" class="alert alert-success mt-3" style="display: none;">
+                                Your enquiry has been submitted successfully! Our team will shortly contact you.
+                            </div> -->
 
 
                             <!-- Bootstrap CSS & JS (Ensure you include Bootstrap in your project) -->
@@ -836,180 +1147,171 @@
         </div>
         <!-- IMAGE SLIDER AREA END -->
 
-        <!-- Gallery area start -->
-        <div class="ltn__gallery-area mb-120">
-            <div class="container">
+      <!-- Gallery area start -->
+<div class="ltn__gallery-area mb-120">
+    <div class="container">
 
-                <!-- Portfolio Wrapper Start -->
-                <!-- (ltn__gallery-info-hide) Class for 'ltn__gallery-item-info' not showing -->
-                <h1 id="floorplansection"
-                    style="display: flex; align-items: center; text-align: center; font-size: 40px; font-weight: 700; font-family: 'Inter', serif; color: #000;"
-                    onload="this.style.setProperty('--_margin', '57px')">
+        <!-- Portfolio Wrapper Start -->
+        <!-- Header with decorative lines - shifted right -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <h1 id="floorplansection" style="margin-left: 50px; /* Adjust this value to control how far right */ display: flex; align-items: center; text-align: center; font-size: 40px; font-weight: 700; font-family: 'Inter', serif; color: #000;">
                     <span style="flex: 1; border: 1px solid #000; margin-right: 57px;"></span>
                     Floor Plans
                     <span style="flex: 1; border: 1px solid #000; margin-left: 57px;"></span>
                 </h1>
-
-                <div class="ltn__gallery-active row ltn__gallery-style-2 ltn__gallery-info-hide---">
-                    <div class="ltn__gallery-sizer col-1"></div>
-
-                    <!-- gallery-item -->
-                    <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
-                        <div class="ltn__gallery-item-inner">
-                            <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
-                                <!-- Blurred Image -->
-                                <img src="img/floor1.png" alt="Image" class="gallery-img">
-
-                                <!-- View Button Positioned on Image -->
-                                <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
-                                        data-bs-target="#enquiryModal">
-                                        DOWNNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CSS -->
-                    <style>
-                        /* Ensure container is positioned correctly */
-                        .ltn__gallery-item-img {
-                            position: relative;
-                            display: inline-block;
-                            width: 100%;
-                        }
-
-                        /* Always Blurred Image */
-                        .gallery-img {
-                            width: 100%;
-                            display: block;
-                            filter: blur(5px);
-                            /* Always blurred */
-                        }
-
-                        /* View Button Styling */
-                        .view-btn {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            background-color: #122840;
-                            border-color: #122840;
-                            padding: 10px 20px;
-                            font-size: 14px;
-                            opacity: 0.9;
-                            color: white;
-                            text-decoration: none;
-                            border-radius: 5px;
-                            border: none;
-                        }
-                    </style>
-
-
-
-
-                    <!-- gallery-item -->
-                    <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
-                        <div class="ltn__gallery-item-inner">
-                            <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
-                                <!-- Blurred Image -->
-                                <img src="img/floor1.png" alt="Image" class="gallery-img">
-
-                                <!-- View Button Positioned on Image -->
-                                <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
-                                        data-bs-target="#enquiryModal">
-                                        DOWNNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- gallery-item -->
-                    <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
-                        <div class="ltn__gallery-item-inner">
-                            <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
-                                <!-- Blurred Image -->
-                                <img src="img/floor1.png" alt="Image" class="gallery-img">
-
-                                <!-- View Button Positioned on Image -->
-                                <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
-                                        data-bs-target="#enquiryModal">
-                                        DOWNNLOAD
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- gallery-item -->
-                    <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
-                        <div class="ltn__gallery-item-inner">
-                            <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
-                                <!-- Blurred Image -->
-                                <img src="img/floor1.png" alt="Image" class="gallery-img">
-
-                                <!-- View Button Positioned on Image -->
-                                <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
-                                        data-bs-target="#enquiryModal">
-                                        DOWNNLOAD
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
-                        <div class="ltn__gallery-item-inner">
-                            <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
-                                <!-- Blurred Image -->
-                                <img src="img/floor1.png" alt="Image" class="gallery-img">
-
-                                <!-- View Button Positioned on Image -->
-                                <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
-                                        data-bs-target="#enquiryModal">
-                                        DOWNNLOAD
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <!-- gallery-item -->
-                    <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
-                        <div class="ltn__gallery-item-inner">
-                            <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
-                                <!-- Blurred Image -->
-                                <img src="img/floor1.png" alt="Image" class="gallery-img">
-
-                                <!-- View Button Positioned on Image -->
-                                <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
-                                        data-bs-target="#enquiryModal">
-                                        DOWNNLOAD
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
             </div>
         </div>
-        <!-- Gallery area end -->
+
+        <!-- Gallery container -->
+        <div class="ltn__gallery-active row ltn__gallery-style-2 ltn__gallery-info-hide---">
+            <div class="ltn__gallery-sizer col-1"></div>
+
+            <!-- gallery-item -->
+            <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
+                <div class="ltn__gallery-item-inner">
+                    <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
+                        <!-- Blurred Image -->
+                        <img src="img/floor1.png" alt="Image" class="gallery-img">
+
+                        <!-- View Button Positioned on Image -->
+                        <div class="btn-wrapper animated">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
+                                data-bs-target="#enquiryModal">
+                                DOWNLOAD
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- gallery-item -->
+            <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
+                <div class="ltn__gallery-item-inner">
+                    <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
+                        <!-- Blurred Image -->
+                        <img src="img/floor1.png" alt="Image" class="gallery-img">
+
+                        <!-- View Button Positioned on Image -->
+                        <div class="btn-wrapper animated">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
+                                data-bs-target="#enquiryModal">
+                                DOWNLOAD
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- gallery-item -->
+            <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
+                <div class="ltn__gallery-item-inner">
+                    <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
+                        <!-- Blurred Image -->
+                        <img src="img/floor1.png" alt="Image" class="gallery-img">
+
+                        <!-- View Button Positioned on Image -->
+                        <div class="btn-wrapper animated">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
+                                data-bs-target="#enquiryModal">
+                                DOWNLOAD
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- gallery-item -->
+            <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
+                <div class="ltn__gallery-item-inner">
+                    <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
+                        <!-- Blurred Image -->
+                        <img src="img/floor1.png" alt="Image" class="gallery-img">
+
+                        <!-- View Button Positioned on Image -->
+                        <div class="btn-wrapper animated">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
+                                data-bs-target="#enquiryModal">
+                                DOWNLOAD
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
+                <div class="ltn__gallery-item-inner">
+                    <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
+                        <!-- Blurred Image -->
+                        <img src="img/floor1.png" alt="Image" class="gallery-img">
+
+                        <!-- View Button Positioned on Image -->
+                        <div class="btn-wrapper animated">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
+                                data-bs-target="#enquiryModal">
+                                DOWNLOAD
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- gallery-item -->
+            <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12">
+                <div class="ltn__gallery-item-inner">
+                    <div class="ltn__gallery-item-img" style="position: relative; overflow: hidden;">
+                        <!-- Blurred Image -->
+                        <img src="img/floor1.png" alt="Image" class="gallery-img">
+
+                        <!-- View Button Positioned on Image -->
+                        <div class="btn-wrapper animated">
+                            <a href="#" class="theme-btn-1 btn btn-effect-1 view-btn" data-bs-toggle="modal"
+                                data-bs-target="#enquiryModal">
+                                DOWNLOAD
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CSS -->
+        <style>
+            /* Ensure container is positioned correctly */
+            .ltn__gallery-item-img {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+            }
+
+            /* Always Blurred Image */
+            .gallery-img {
+                width: 100%;
+                display: block;
+                filter: blur(5px);
+                /* Always blurred */
+            }
+
+            /* View Button Styling */
+            .view-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #122840;
+                border-color: #122840;
+                padding: 10px 20px;
+                font-size: 14px;
+                opacity: 0.9;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                border: none;
+            }
+        </style>
+    </div>
+</div>
+<!-- Gallery area end -->
 
 
         <!-- Gallery area start -->
@@ -1133,7 +1435,7 @@
                                 </ul>
 
                                 <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal"
+                                    <a href="#" class="theme-btn-1 btn btn-effect-1 button-2" data-bs-toggle="modal"
                                         data-bs-target="#enquiryModal"
                                         style="background-color: #122840; border-color: #122840; display: block; text-align: center; padding: 12px; font-weight: 600; border-radius: 6px; transition: all 0.3s ease;">
                                         Know More
@@ -1172,7 +1474,7 @@
                                 </ul>
 
                                 <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal"
+                                    <a href="#" class="theme-btn-1 btn btn-effect-1 button-2" data-bs-toggle="modal"
                                         data-bs-target="#enquiryModal"
                                         style="background-color: #122840; border-color: #122840; display: block; text-align: center; padding: 12px; font-weight: 600; border-radius: 6px; transition: all 0.3s ease;">
                                         Know More
@@ -1212,7 +1514,7 @@
                                 </ul>
 
                                 <div class="btn-wrapper animated">
-                                    <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal"
+                                    <a href="#" class="theme-btn-1 btn btn-effect-1 button-2" data-bs-toggle="modal"
                                         data-bs-target="#enquiryModal"
                                         style="background-color: #122840; border-color: #122840; display: block; text-align: center; padding: 12px; font-weight: 600; border-radius: 6px; transition: all 0.3s ease;">
                                         Know more
@@ -1328,7 +1630,7 @@
         <!-- GOOGLE MAP AREA END -->
 
         <!-- CALL TO ACTION START (call-to-action-6) -->
-        <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">
+        <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -1410,7 +1712,7 @@
                     if (!hasBeenOpened) {
                         showChat();
                     }
-                }, 3000);
+                }, 7000);
 
                 closeBtn.addEventListener("click", hideChat);
 
@@ -1527,7 +1829,7 @@
                     <div class="row">
                         <div class="col-md-6 col-12">
                             <div class="ltn__copyright-design clearfix">
-                                <p>All Rights Reserved @ Ultra Edge IT Solutions <span class="current-year"></span></p>
+                                <p>All Rights Reserved @ 13 Ignite <span class="current-year"></span></p>
                             </div>
                         </div>
 
@@ -1583,6 +1885,7 @@
 
         <!-- All JS Plugins -->
         <script src="js/plugins.js"></script>
+        <script src="js/slidecor.js"></script>
         <!-- Main JS -->
         <script src="js/main.js"></script>
 
