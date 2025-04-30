@@ -2089,6 +2089,61 @@
   });
 })(jQuery);
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   const form = document.getElementById("enquiryForm");
+//   const scriptURL =
+//     "https://script.google.com/macros/s/AKfycbzEbGkE6CtBx3Qw6b8LuDACJbbWPoBICIbvP4EYhv0AHjrnYzidp1S9xN8TGZv7S04O/exec";
+
+//   form.addEventListener("submit", function (e) {
+//     e.preventDefault();
+
+//     if (!form.checkValidity()) {
+//       form.classList.add("was-validated");
+//       return;
+//     }
+
+//     const formData = new FormData(form);
+//     console.log("FormData entries:", Object.fromEntries(formData));
+
+//     fetch(scriptURL, {
+//       method: "POST",
+//       body: new URLSearchParams(formData),
+//     })
+//       .then((response) => {
+//         console.log("Form submitted successfully");
+//         // Optional: Show alert or hide modal before redirect
+//         alert("Form Submitted Successfully");
+        
+//         // OPTIONAL: Short delay to allow user to see the alert
+//         // setTimeout(() => {
+//         //   window.location.href = "thankyou.html"; // ✅ Redirect here
+//         // }, 500); // or 0 if no delay needed
+
+//         // Optional: If not redirecting, show/hide modal etc.
+//         const formAlert = document.getElementById("formAlert");
+//         if (formAlert) {
+//           formAlert.style.display = "block";
+//           setTimeout(() => {
+//             formAlert.style.display = "none";
+//           }, 3000);
+//         }
+
+//         form.reset();
+//         form.classList.remove("was-validated");
+
+//         const modalElement = document.getElementById("enquiryModal");
+//         if (modalElement) {
+//           const modalInstance = bootstrap.Modal.getInstance(modalElement);
+//           if (modalInstance) modalInstance.hide();
+//         }
+//       })
+//       .catch((error) => {
+//         console.error("Error submitting form:", error);
+//         alert("There was an error submitting your enquiry. Please try again.");
+//       });
+//   });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("enquiryForm");
   const scriptURL =
@@ -2111,31 +2166,13 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((response) => {
         console.log("Form submitted successfully");
-        // Optional: Show alert or hide modal before redirect
-        alert("Form Submitted Successfully");
-        
-        // OPTIONAL: Short delay to allow user to see the alert
-        setTimeout(() => {
-          window.location.href = "thankyou.html"; // ✅ Redirect here
-        }, 500); // or 0 if no delay needed
 
-        // Optional: If not redirecting, show/hide modal etc.
-        const formAlert = document.getElementById("formAlert");
-        if (formAlert) {
-          formAlert.style.display = "block";
-          setTimeout(() => {
-            formAlert.style.display = "none";
-          }, 3000);
-        }
-
-        form.reset();
-        form.classList.remove("was-validated");
-
-        const modalElement = document.getElementById("enquiryModal");
-        if (modalElement) {
-          const modalInstance = bootstrap.Modal.getInstance(modalElement);
-          if (modalInstance) modalInstance.hide();
-        }
+        // ✅ HTML-style redirect using a temp form
+        const tempForm = document.createElement("form");
+        tempForm.action = "thankyou.html";
+        tempForm.method = "GET";
+        document.body.appendChild(tempForm);
+        tempForm.submit();
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
@@ -2143,6 +2180,49 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const form = document.getElementById("enquiryForm1");
+//   const scriptURL =
+//     "https://script.google.com/macros/s/AKfycbzEbGkE6CtBx3Qw6b8LuDACJbbWPoBICIbvP4EYhv0AHjrnYzidp1S9xN8TGZv7S04O/exec";
+
+//   form.addEventListener("submit", function (e) {
+//     e.preventDefault();
+
+//     if (!form.checkValidity()) {
+//       form.classList.add("was-validated");
+//       return;
+//     }
+
+//     const formData = new FormData(form);
+//     console.log("FormData entries:", Object.fromEntries(formData));
+
+//     fetch(scriptURL, {
+//       method: "POST",
+//       body: new URLSearchParams(formData),
+//     })
+//       .then((response) => {
+//         console.log("Form submitted successfully");
+//         alert("Form Submitted Successfully");
+//         form.reset();
+//         form.classList.remove("was-validated");
+//         setTimeout(() => {
+//           window.location.href = "thankyou.html"; // ✅ Redirect here
+//         }, 500); 
+//         const modalElement = document.getElementById("enquiryModal");
+//         if (modalElement) {
+//           const modalInstance = bootstrap.Modal.getInstance(modalElement);
+//           if (modalInstance) modalInstance.hide();
+//         }
+//       })
+//       .catch((error) => {
+//         console.error("Error submitting form:", error);
+//         alert("There was an error submitting your enquiry. Please try again.");
+//       });
+//   });
+// });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -2159,7 +2239,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const formData = new FormData(form);
-    console.log("FormData entries:", Object.fromEntries(formData));
 
     fetch(scriptURL, {
       method: "POST",
@@ -2167,17 +2246,13 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((response) => {
         console.log("Form submitted successfully");
-        alert("Form Submitted Successfully");
-        form.reset();
-        form.classList.remove("was-validated");
-        setTimeout(() => {
-          window.location.href = "thankyou.html"; // ✅ Redirect here
-        }, 500); 
-        const modalElement = document.getElementById("enquiryModal");
-        if (modalElement) {
-          const modalInstance = bootstrap.Modal.getInstance(modalElement);
-          if (modalInstance) modalInstance.hide();
-        }
+
+        // ✅ Simulate HTML redirect using a temporary form
+        const tempForm = document.createElement("form");
+        tempForm.action = "thankyou.html";
+        tempForm.method = "GET";
+        document.body.appendChild(tempForm);
+        tempForm.submit();
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
