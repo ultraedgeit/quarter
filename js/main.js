@@ -2145,43 +2145,60 @@
 // });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("enquiryForm");
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbzEbGkE6CtBx3Qw6b8LuDACJbbWPoBICIbvP4EYhv0AHjrnYzidp1S9xN8TGZv7S04O/exec";
+  // Handle first form submission
+  const form1 = document.getElementById("enquiryForm");
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzEbGkE6CtBx3Qw6b8LuDACJbbWPoBICIbvP4EYhv0AHjrnYzidp1S9xN8TGZv7S04O/exec";
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  form1.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
 
-    if (!form.checkValidity()) {
-      form.classList.add("was-validated");
+    // Check if the form is valid
+    if (!form1.checkValidity()) {
+      form1.classList.add("was-validated");
       return;
     }
 
-    const formData = new FormData(form);
+    const formData = new FormData(form1);
     console.log("FormData entries:", Object.fromEntries(formData));
 
+    // Send the form data to Google Apps Script using fetch
     fetch(scriptURL, {
       method: "POST",
       body: new URLSearchParams(formData),
     })
       .then((response) => {
-        console.log("Form submitted successfully");
+        console.log("Form 1 submitted successfully");
 
-        // ✅ HTML-style redirect using a temp form
-        const tempForm = document.createElement("form");
-        tempForm.action = "thankyou.html";
-        tempForm.method = "GET";
-        document.body.appendChild(tempForm);
-        tempForm.submit();
+        // Redirect user to thank you page
+        window.location.href = "thankyou.html";
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
         alert("There was an error submitting your enquiry. Please try again.");
       });
   });
+
+  // Handle second form submission
+  const form2 = document.getElementById("enquiryForm1");
+
+  form2.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Check if form is valid
+    if (form2.checkValidity()) {
+      console.log("Form 2 is valid");
+
+      // Optionally save form data if needed
+      // You can add additional logic here to save or manipulate the data
+
+      // Redirect user to thank you page
+      window.location.href = "thankyou.html";
+    } else {
+      console.log("Form 2 is not valid");
+      form2.classList.add("was-validated"); // Show validation error
+    }
+  });
 });
-
-
 // document.addEventListener("DOMContentLoaded", function () {
 //   const form = document.getElementById("enquiryForm1");
 //   const scriptURL =
